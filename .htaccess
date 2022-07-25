@@ -2,7 +2,7 @@ RewriteEngine on
 
 RewriteCond %{HTTP_HOST} ^www\.navinkr\.com [OR]
 RewriteCond %{REQUEST_URI} /index\.html$
-RewriteRule (.*?)(index\.html)?$ https://navinkr.com$1 [NE, R=301, L]
+RewriteRule (.*?)(index\.html)?$ http://navinkr.com$1 [NE, R=301, L]
 
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
