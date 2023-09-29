@@ -65,16 +65,16 @@ const postContents = [
   
   // pop-up info list for image 4
   {
-    parameter:'TXT2IMG + HI-RES',
+    parameter:'TXT2IMG',
     class: 'parameter',
     heading: ['Prompt', 'Negative Prompt', 'Sampler', 'Model', 'CFG scale', 'Strength', 'Steps', 'Clip skip'
               ],
     content: [
-          'A Ghibli style Indian woman, hot, seductive, erotic,athletic body, subtle smile, traditional rural home in background, art by Raja Ravi Varma',
-          '&lt;baddream&gt;',
-          'DPM++ SDE Karras',
-          'dreamshaper_v6.31.ckpt',
-          '9.0', '1.0', '30', '2'
+          'establishing shot of small modern osaka house, pitched roof, trending on pixiv, beautiful gouache painting by hayao miyazaki, by studio ghibli, by atey ghailan, by james jean, trending on artstation, unreal engine 5, cinematic lighting',
+          'ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, bad composition, mutation, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, blurry, bad art, bad anatomy, blurred, text, watermark, grainy',
+          'DPM++ 2M Karras',
+          'sd_v1.5_f16.ckpt',
+          '10', '1.0', '30', '2'
         ],
     class: 'popup-content',
   },
@@ -161,22 +161,6 @@ const postContents = [
   
   // pop-up info list for image 10
   {
-    parameter:'TXT2IMG',
-    class: 'parameter',
-    heading: ['Prompt', 'Negative Prompt', 'Sampler', 'Model', 'CFG scale', 'Strength', 'Steps', 'Clip skip'
-              ],
-    content: [
-          'establishing shot of small modern osaka house, pitched roof, trending on pixiv, beautiful gouache painting by hayao miyazaki, by studio ghibli, by atey ghailan, by james jean, trending on artstation, unreal engine 5, cinematic lighting',
-          'ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, bad composition, mutation, mutated, extra limbs, extra legs, extra arms, disfigured, deformed, cross-eye, body out of frame, blurry, bad art, bad anatomy, blurred, text, watermark, grainy',
-          'DPM++ 2M Karras',
-          'sd_v1.5_f16.ckpt',
-          '10', '1.0', '30', '2'
-        ],
-    class: 'popup-content',
-  },
-  
-  // pop-up info list for image 11
-  {
     parameter:'TXT2IMG + HI-RES + CONTROLNET',
     class: 'parameter',
     heading: ['Prompt', 'Negative Prompt', 'Sampler', 'Model', 'CFG scale', 'Strength', 'Steps', 'Clip skip'
@@ -187,6 +171,22 @@ const postContents = [
           'DPM++ 2M Karras',
           'ghibli_v1_f16.ckpt',
           '7.5', '1.0', '30', '1'
+        ],
+    class: 'popup-content',
+  },
+  
+  // pop-up info list for image 11
+  {
+    parameter:'TXT2IMG + HI-RES',
+    class: 'parameter',
+    heading: ['Prompt', 'Negative Prompt', 'Sampler', 'Model', 'CFG scale', 'Strength', 'Steps', 'Clip skip'
+              ],
+    content: [
+          'A Ghibli style Indian woman, hot, seductive, erotic,athletic body, subtle smile, traditional rural home in background, art by Raja Ravi Varma',
+          '&lt;baddream&gt;',
+          'DPM++ SDE Karras',
+          'dreamshaper_v6.31.ckpt',
+          '9.0', '1.0', '30', '2'
         ],
     class: 'popup-content',
   },
