@@ -269,6 +269,15 @@ h6,
   background-color: rgba(13, 30, 45, 0.6);
 }
 
+
+@media (max-width:780px){
+  .testimonials-slider{
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+
 .sticky-content {
   position: sticky;
   position: -webkit-sticky;
@@ -1110,7 +1119,7 @@ img {
 .parameter {
   background-color: #233549;
   border-radius: 3px;
-  padding-inline: 3px;
+  /* padding-inline: 3px; */
   display: inline;
   color: lightblue;
   font-size: 12px;
@@ -1163,3 +1172,5 @@ img {
     padding-left: 0px;
   }
 }
+
+
