@@ -797,7 +797,7 @@ h6,
 img.logo {
   width: 12%;
   height: auto;
-  display: block;
+  /* display: block; */
   border-radius: 0px;
 }
 
@@ -805,7 +805,7 @@ img.logo {
   img.logo {
     width: 25%;
     height: auto;
-    display: block;
+    /* display: block; */
     border-radius: 0px;
   }
 }
@@ -1173,4 +1173,6 @@ img {
   }
 }
 
-
+#test{
+  margin-top: -60px;
+}
