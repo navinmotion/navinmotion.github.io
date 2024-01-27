@@ -996,12 +996,13 @@ img.logo {
   }
 }
 
-#soil {
+/* #soil {
   margin-top: -15px;
-}
+} */
 
 
 #save_soil {
+  margin-left: -10px;
   margin-top: 15px;
 }
 
