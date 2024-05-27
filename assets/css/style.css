@@ -372,18 +372,13 @@ h6,
 
 .previous :hover{
   background-color: rgb(231, 64, 64) !important;
-  border: none;
   color: white !important;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
 }
 
 .gif{
   text-align: center;
+  height: 300px !important;
+  width: 300px !important;
 }
 
 .next {
