@@ -370,6 +370,22 @@ h6,
   margin: 4px 2px;
 }
 
+.previous :hover{
+  background-color: rgb(231, 64, 64);
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.gif{
+  text-align: center;
+}
+
 .next {
   background-color: royalblue;
   border: none;
