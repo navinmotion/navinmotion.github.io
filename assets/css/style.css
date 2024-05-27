@@ -352,6 +352,11 @@ h6,
   height: 100%;
 }
 
+.video-container #rive_canvas{
+  width: 640 !important;
+  height: 564 !important;
+}
+
 .video-container video {
   width: 100% !important;
   height: auto !important;
