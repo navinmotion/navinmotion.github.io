@@ -375,16 +375,22 @@ h6,
   margin: 4px 2px;
 }
 
-.previous :hover{
+.previous a:hover{
   background-color: rgb(231, 64, 64) !important;
   color: white !important;
 }
 
-.gif{
-  text-align: center;
-  height: 300px !important;
-  width: 300px !important;
+.gif_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+.gif {
+  width: 650px;
+  height: 6500px;
+}
+
 
 .next {
   background-color: royalblue;
