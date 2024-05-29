@@ -352,10 +352,10 @@ h6,
   height: 100%;
 }
 
-.video-container #rive_canvas{
+/* .video-container #rive_canvas{
   width: 640 !important;
   height: 564 !important;
-}
+} */
 
 .video-container video {
   width: 100% !important;
@@ -375,10 +375,17 @@ h6,
   margin: 4px 2px;
 }
 
-/* .gif {
-  width: 650px;
-  height: 6500px;
-} */
+.gif {
+  display: block;
+  max-width: 80%; /* Ensures the image is responsive and maintains aspect ratio */
+  max-height: 80vh; /* Keeps the image within the viewport height */
+  margin: auto; /* Centers the image horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 
 .next {
