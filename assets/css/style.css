@@ -409,6 +409,22 @@ h6,
   margin: 4px 2px;
 }
 
+.next {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+}
+
+.round {
+  border-radius: 2px;
+}
+
 /* #canvas{
   width: ;
   height: ;
@@ -426,19 +442,10 @@ h6,
     margin-bottom: 10px;
 } */
 
-  .rive_cont {
-    display: flex;
-    align-items: flex-start; 
-  }
-
   .gif {
     max-width: 70%; 
     max-height: 80vh;
-    margin-right: 15px; 
-  }
-
-  .head_sage {
-    flex: 1;
+    margin-bottom: 10px;
   }
 }
 
@@ -466,22 +473,6 @@ h6,
   }
 }
 
-
-.next {
-  background-color: royalblue;
-  border: none;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-}
-
-.round {
-  border-radius: 2px;
-}
 
 /* Services */
 .services i {
