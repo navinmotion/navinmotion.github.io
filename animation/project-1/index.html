@@ -89,12 +89,9 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-8" data-aos="fade-up">
-
-              <!-- <div class="video-container"> -->
                 <div class="rive_canvas">
-                  <canvas id="canvas" width="500" height="500"></canvas>
+                  <canvas id="canvas" width="640" height="564"></canvas>
                 </div>
-              <!-- </div> -->
               <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
               <script>
                 const r = new rive.Rive({
@@ -102,15 +99,7 @@
                   canvas: document.getElementById("canvas"),
                   autoplay: true,
                   stateMachines: "sageState",
-                  // onLoad: () => {
-                  //   r.resizeDrawingSurfaceToCanvas();
-                  // },
                 });
-
-                // // Resize Rive canvas when the window size changes
-                // window.addEventListener('resize', () => {
-                //   r.resizeDrawingSurfaceToCanvas();
-                // });
               </script>
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
