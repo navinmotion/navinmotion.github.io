@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo-nk-favicon.png" rel="icon">
-  <link href="assets/img/logo-nk-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/logo-nk-favicon.png" rel="icon">
+  <link href="/assets/img/logo-nk-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
@@ -19,14 +19,14 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyPortfolio - v4.7.0
@@ -61,7 +61,7 @@
     <div class="container">
       <div class="navbar-brand">
         <a href="/">
-          <img class="logo" src="assets/img/logo-nk.png"></a>
+          <img class="logo" src="/assets/img/logo-nk.png"></a>
       </div>
       <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
         <span></span>
@@ -89,17 +89,28 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-8" data-aos="fade-up">
-              <div class="rive_canvas">
-                <canvas id="canvas" width="500" height="500"></canvas>
-              </div>
+
+              <!-- <div class="video-container"> -->
+                <div class="rive_canvas">
+                  <canvas id="canvas" width="500" height="500"></canvas>
+                </div>
+              <!-- </div> -->
               <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
               <script>
                 const r = new rive.Rive({
-                  src: "assets/riv/sage.riv",
+                  src: "/assets/riv/sage.riv",
                   canvas: document.getElementById("canvas"),
                   autoplay: true,
                   stateMachines: "sageState",
+                  // onLoad: () => {
+                  //   r.resizeDrawingSurfaceToCanvas();
+                  // },
                 });
+
+                // // Resize Rive canvas when the window size changes
+                // window.addEventListener('resize', () => {
+                //   r.resizeDrawingSurfaceToCanvas();
+                // });
               </script>
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -129,7 +140,7 @@
       <div class="container" data-aos="fade-up">
         <div class="row align-items-end">
           <h3 class="h3 heading">Brief / Concept</h3>
-            <img src="assets/img/sage-demo.gif" alt="Sage Demo GIF" class="gif">
+            <img src="/assets/img/sage-demo.gif" alt="Sage Demo GIF" class="gif">
 
             <p>In the above project, the software that will ultimately load this file doesn’t
               need to know anything about the design, shapes, or the sequence the animations
@@ -177,14 +188,14 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 
 </body>
 
