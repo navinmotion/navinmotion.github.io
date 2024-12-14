@@ -121,13 +121,13 @@
 
       <!--Committed Changes on 22-08-2023-->
       <div class="box" data-aos="fade-up" data-aos-delay="200">
-        <button class="tablink" onclick="openPage('AI', this, '#323946')"><img
-            src="assets/img/robot.png" class="pic"><span class="text">&nbsp&nbspAI Art</span></button>
-        <button class="tablink" id="btn1" onclick="openPage('Animation', this, '#323946')" id="defaultOpen"><img
+        <button class="tablink" onclick="openPage('AI', this, '#323946')"><img src="assets/img/robot.png"
+            class="pic"><span class="text">&nbsp&nbspAI Art</span></button>
+        <button class="tablink" onclick="openPage('Animation', this, '#323946')" id="defaultOpen"><img
             src="assets/img/animation_pic.png" class="pic"><span class="text">&nbsp&nbspAnimation</span></button>
         <button class="tablink" onclick="openPage('Video', this, '#323946')"><img src="assets/img/video_edit.png"
             class="pic"><span class="text">&nbsp&nbspVideo Editing</span></button>
-
+        <!-- id="btn1" -->
         <div id="AI" class="tabcontent">
           <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
             <!-- <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4"> -->
@@ -144,15 +144,7 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                /* color: white; */
-                /* font-family: 'Titillium Web', sans-serif; */
               }
-
-              /* html,
-                body {
-                  overflow: hidden;
-                  background-color: #000000;
-                } */
 
               main {
                 position: relative;
@@ -160,7 +152,6 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                /* overflow: scroll; */
               }
 
               .header {
@@ -187,101 +178,31 @@
           </div>
         </div>
 
-
         <div id="Animation" class="tabcontent">
           <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-            <!-- Section-1 -->
-            <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-1" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Sage Welcome Ux/Ui</h3>
-                  <!--span>Sub-heading</span-->
+            <!-- <div class="custom-container-animation"> -->
+              <main>
+                <div class="container_grid_animation">
                 </div>
-                <img class="img-fluid" src="assets/img/sage.png">
-              </a>
-            </div>
-            <!-- Section-2 -->
-            <!-- <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-2" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>FlyingPCG</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/primecraft.png">
-              </a>
-            </div> -->
-            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="#" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Wizard</h3>
-                </div>
-                <img class="img-fluid" src="assets/gif/wizard.gif" alt="Wizard GIF">
-              </a>
-            </div>
-            <!-- Section-3 -->
-            <!-- <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-3" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Ayodhya-Ram Mandir</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/ram_mandir.jpg">
-              </a>
-            </div> -->
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="#" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Spine Boy</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/ram_mandir.jpg">
-              </a>
-            </div>
-            <!-- Section-4 -->
-            <!-- <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-4" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Enchanted Forest</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/forest.jpg">
-              </a>
-            </div> -->
-            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="#" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Happy Girl</h3>
-                </div>
-                <video class="img-fluid" src="assets/video/happy_girl.mp4" autoplay muted loop>
-                  Your browser does not support the video tag.
-                </video>
-              </a>
-            </div>
-            <!-- Section-5 -->
-            <!-- <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-5" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Hello Friends!</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/Hello Friends/Hello Friends 09.webp">
-              </a>
-            </div> -->
-            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="animation/project-5" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>FlyingPCG</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/primecraft.png">
-              </a>
-            </div>
+              </main>
+              <script src="assets/js/animGrid.js"></script>
+              <style>
+                main {
+                  position: relative;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+                .container_grid_animation {
+                  position: relative;
+                  width: 100%;
+                  display: flex;
+                  gap: 10px;
+                }
+                
 
-            <!-- Section-6 -->
-            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="#" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Annoyed Girl</h3>
-                </div>
-                <video class="img-fluid" src="assets/video/annoyed_girl.mp4" autoplay muted loop>
-                  Your browser does not support the video tag.
-                </video>
-              </a>
-            </div>
+              </style>
           </div>
         </div>
 
@@ -291,7 +212,6 @@
               <a href="video/project-1" class="item-wrap fancybox">
                 <div class="work-info">
                   <h3>Secrets of Serpents</h3>
-                  <!--span>Sub-heading</span-->
                 </div>
                 <img class="img-fluid" src="assets/img/serpents.jpg">
               </a>
@@ -300,7 +220,6 @@
               <a href="video/project-2" class="item-wrap fancybox">
                 <div class="work-info">
                   <h3>Power of Dreams</h3>
-                  <!--span>Sub-heading</span-->
                 </div>
                 <img class="img-fluid" src="assets/img/dreams.jpg">
               </a>
@@ -309,7 +228,6 @@
               <a href="video/project-3" class="item-wrap fancybox">
                 <div class="work-info">
                   <h3>Sadhguru meets Wrestlers</h3>
-                  <!--span>Sub-heading</span-->
                 </div>
                 <img class="img-fluid" src="assets/img/wrestling.jpg">
               </a>
@@ -318,7 +236,6 @@
               <a href="video/project-4" class="item-wrap fancybox">
                 <div class="work-info">
                   <h3>Are Geniuses Born or Made?</h3>
-                  <!--span>Sub-heading</span-->
                 </div>
                 <img class="img-fluid" src="assets/img/Beethoven.jpg">
               </a>
@@ -335,7 +252,6 @@
               <a href="video/project-6" class="item-wrap fancybox">
                 <div class="work-info">
                   <h3>Save Soil</h3>
-                  <!--span>Sub-heading</span-->
                 </div>
                 <img class="img-fluid" src="assets/img/Save Soil (16-9).png">
               </a>
@@ -359,11 +275,11 @@
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial">
-                <img src="assets/img/blank-profile-pic.png" alt="Image" class="img-fluid">
+                <img src="assets/img/mihir_gosavi.jpg" alt="Image" class="img-fluid">
+                <p>Navin is an amazing personality. He is an extraordinary blend of creativity and technical expertise. From stunning 2D artistry to innovative AI-driven designs and captivating motion graphics, his versatility stands out. Truly, a powerhouse of talent redefining the creative landscape!</p>
                 <blockquote>
-                  <p>Description</p>
+                  <p>&mdash; Mihir Gosavi</p>
                 </blockquote>
-                <p>&mdash; Name</p>
               </div>
             </div>
           </div>

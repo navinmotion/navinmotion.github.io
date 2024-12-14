@@ -281,3 +281,4 @@ function copyText(contentId, copyImageClass, tickImageClass) {
 }
 
 
+// Changes mades
