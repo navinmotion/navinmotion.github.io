@@ -191,7 +191,6 @@ h6,
 }
 
 .item .item-wrap:hover .work-info {
-  /* margin-top: 0px; */
   opacity: 1;
   visibility: visible;
 }
