@@ -96,8 +96,8 @@
           <div class="item web col-sm-12 col-md-12 col-lg-12 mb-0">
             <a href="/reel" class="item-wrap fancybox">
               <div class="reel-info">
-                <h3>Demo Reel</h3>
-                <span>2022</span>
+                <h2>Demo Reel</h2>
+                <!-- <span>2022</span> -->
               </div>
               <img class="img-fluid" src="assets/img/Reel Thumbnail.jpg">
             </a>
@@ -171,7 +171,6 @@
                 width: 100%;
                 display: flex;
                 gap: 10px;
-                /* padding: 10px 2vw; */
               }
             </style>
             <!-- </div> -->
@@ -200,8 +199,27 @@
                   display: flex;
                   gap: 10px;
                 }
-                
+                .dots-container {
+                  position: absolute;
+                  bottom: 10px; /* Adjust distance from the bottom of the video */
+                  width: 100%; /* Ensure it spans the width of the video */
+                  text-align: center;
+                  z-index: 1; /* Ensures dots are above the video */
+                }
 
+                .dot {
+                  height: 10px;
+                  width: 10px;
+                  margin: 0 5px;
+                  background-color: #bbb;
+                  border-radius: 50%;
+                  display: inline-block;
+                  transition: background-color 0.3s;
+                }
+
+                .dot.active {
+                  background-color: #717171;
+                }
               </style>
           </div>
         </div>
