@@ -108,33 +108,104 @@ document.addEventListener('DOMContentLoaded', () => {
           image.src = post.image;
           image.classList.add('img-fluid');
           anchor.appendChild(image);
-        } else if (post.type === 'video') {
-          // Handle multiple videos
+        } 
+        else if (post.type === 'video') {
           if (post.videos && Array.isArray(post.videos)) {
-            let video = document.createElement('video');
-            video.src = post.videos[0];
-            video.classList.add('img-fluid');
-            video.autoplay = true;
-            video.muted = true;
-            video.loop = false; // Disable looping for chaining
-            video.controls = true;
-
-            // Chain videos
-            let currentVideoIndex = 0;
-            video.onended = () => {
-              currentVideoIndex++;
-              if (currentVideoIndex < post.videos.length) {
-                video.src = post.videos[currentVideoIndex];
-                video.play();
-              } else {
-                currentVideoIndex = 0; // Reset to first video
-                video.src = post.videos[currentVideoIndex];
-                video.play();
+            // Create a container for the video slider
+            let slider = document.createElement('div');
+            slider.classList.add('slider');
+        
+            // Create a dots container
+            let dotsContainer = document.createElement('div');
+            dotsContainer.classList.add('dots-container');
+        
+            // Add videos as slides
+            post.videos.forEach((videoSrc, index) => {
+              let slide = document.createElement('div');
+              slide.classList.add('slide');
+              if (index !== 0) slide.style.display = 'none'; // Hide all slides except the first
+        
+              let video = document.createElement('video');
+              video.src = videoSrc;
+              video.classList.add('img-fluid');
+              video.autoplay = true;
+              video.muted = true;
+              video.controls = false;
+              video.loop = true;
+        
+              slide.appendChild(video);
+              slider.appendChild(slide);
+        
+              // Create a dot for each video
+              let dot = document.createElement('span');
+              dot.classList.add('dot');
+              if (index === 0) dot.classList.add('active'); // Highlight the first dot initially
+              dotsContainer.appendChild(dot);
+            });
+        
+            // Add the slider and dots container to the anchor
+            slider.appendChild(dotsContainer);
+            anchor.appendChild(slider);
+        
+            // Functions for slider functionality
+            let currentIndex = 0;
+        
+            function showSlide(n) {
+              const slides = slider.querySelectorAll('.slide');
+              const dots = dotsContainer.querySelectorAll('.dot');
+        
+              slides.forEach((slide, index) => {
+                slide.style.display = index === n ? 'block' : 'none';
+              });
+        
+              dots.forEach((dot, index) => {
+                if (index === n) {
+                  dot.classList.add('active');
+                } else {
+                  dot.classList.remove('active');
+                }
+              });
+            }
+        
+            function showNextSlide() {
+              const slides = slider.querySelectorAll('.slide');
+              currentIndex = (currentIndex + 1) % slides.length;
+              showSlide(currentIndex);
+            }
+        
+            function showPreviousSlide() {
+              const slides = slider.querySelectorAll('.slide');
+              currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+              showSlide(currentIndex);
+            }
+        
+            // Auto-advance functionality
+            setInterval(() => {
+              showNextSlide();
+            }, 5000); // Auto-advance every 5 seconds
+        
+            // Swipe gesture handling
+            let touchStartX;
+            slider.addEventListener('touchstart', (e) => {
+              touchStartX = e.touches[0].clientX;
+            });
+        
+            slider.addEventListener('touchend', (e) => {
+              const touchEndX = e.changedTouches[0].clientX;
+              const delta = touchEndX - touchStartX;
+        
+              if (delta > 30) {
+                showPreviousSlide(); // Swipe right
+              } else if (delta < -30) {
+                showNextSlide(); // Swipe left
               }
-            };
-
-            anchor.appendChild(video);
+            });
+        
+            // Show the first slide and start autoplay
+            showSlide(0);
+            slider.querySelector('.slide').querySelector('video').play();
           } else {
+            // Handle single video as before
             let video = document.createElement('video');
             video.src = post.video;
             video.classList.add('img-fluid');
@@ -143,8 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
             video.loop = true;
             anchor.appendChild(video);
           }
-        }
-
+        }        
+        
         anchor.appendChild(workInfo);
         postDiv.appendChild(anchor);
         column.appendChild(postDiv);
