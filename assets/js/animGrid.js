@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Spine Boy',
-      link: '#',
+      link: '',
       type: 'video',
       videos: [
         'assets/video/spineBoy-walking.mp4',
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Maa Durga',
-      link: '#',
+      link: '',
       type: 'video',
       videos: [
         'assets/video/Maa-Durga.mp4',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Egypt Queen',
-      link: '#',
+      link: '',
       type: 'video',
       videos: [
         'assets/video/Egypt-Queen.mp4',
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Viking Warrior',
-      link: '#',
+      link: '',
       type: 'video',
       videos: [
         'assets/video/Viking-Warrior.mp4',
@@ -91,7 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         postDiv.classList.add('item');
 
         let anchor = document.createElement('a');
-        anchor.href = post.link; // Set the link for the next page
+        if (post.link) {
+          anchor.href = post.link; // Set the link for the next page if it exists
+        } else {
+          // Remove href attribute and prevent any action
+          anchor.href = "javascript:void(0)"; // Ensures no action is triggered
+          anchor.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default action
+          });
+        }
         anchor.classList.add('item-wrap', 'fancybox');
 
         let workInfo = document.createElement('div');
