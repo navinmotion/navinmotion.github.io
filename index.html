@@ -23,7 +23,7 @@
   <!-- Favicons -->
   <link href="assets/img/logo-nk-favicon.png" rel="icon">
   <link href="assets/img/logo-nk-touch-icon.png" rel="apple-touch-icon">
-
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
@@ -52,134 +52,140 @@
 <body>
   <!-- ======= Navbar ======= -->
 
-
-  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-    <div class="container py-2 py-md-5">
-      <div class="row">
-        <div class="col-md-5 d-none d-md-block">
-          <h3>Hire Me</h3>
-          <p>Get a faster response by sending detailed information upfront.(e.g. client, budget, timeframe,
-            storyboard/sketches, NDA)<br><a href="mailto:navinkrworks@gmail.com">navinkrworks@gmail.com</a></p>
-        </div>
-        <div class="col-md-7">
-          <ul class="custom-menu">
-            <li class="active"><a href="/">Work</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <!-- Loader Element -->
+  <div id="loader">
+    <lottie-player src="assets/loader/loading.json" background="transparent" speed="1" loop autoplay></lottie-player>
   </div>
 
+  <div id="main-content">
 
-  <nav class="navbar navbar-light custom-navbar">
-    <div class="container">
-      <div class="navbar-brand">
-        <a href="/">
-          <img class="logo" src="assets/img/logo-nk.png"></a>
+    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+      <div class="container py-2 py-md-5">
+        <div class="row">
+          <div class="col-md-5 d-none d-md-block">
+            <h3>Hire Me</h3>
+            <p>Get a faster response by sending detailed information upfront.(e.g. client, budget, timeframe,
+              storyboard/sketches, NDA)<br><a href="mailto:navinkrworks@gmail.com">navinkrworks@gmail.com</a></p>
+          </div>
+          <div class="col-md-7">
+            <ul class="custom-menu">
+              <li class="active"><a href="/">Work</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
-        <span></span>
-      </a>
     </div>
-  </nav>
 
 
-  <!-- ======= Main Section ======= -->
-  <!-- <main id="main"> -->
-  <!-- ======= Reel Section ======= -->
-
-  <section class="section pt-3">
-    <div class="motion">
+    <nav class="navbar navbar-light custom-navbar">
       <div class="container">
-        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up">
-          <div class="item web col-sm-12 col-md-12 col-lg-12 mb-0">
-            <a href="/reel" class="item-wrap fancybox">
-              <div class="reel-info">
-                <h2>Demo Reel</h2>
-                <!-- <span>2022</span> -->
-              </div>
-              <img class="img-fluid" src="assets/img/Reel Thumbnail.jpg">
-            </a>
+        <div class="navbar-brand">
+          <a href="/">
+            <img class="logo" src="assets/img/logo-nk.png"></a>
+        </div>
+        <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+          <span></span>
+        </a>
+      </div>
+    </nav>
+
+
+    <!-- ======= Main Section ======= -->
+    <!-- <main id="main"> -->
+    <!-- ======= Reel Section ======= -->
+
+    <section class="section pt-3">
+      <div class="motion">
+        <div class="container">
+          <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up">
+            <div class="item web col-sm-12 col-md-12 col-lg-12 mb-0">
+              <a href="/reel" class="item-wrap fancybox">
+                <div class="reel-info">
+                  <h2>Demo Reel</h2>
+                  <!-- <span>2022</span> -->
+                </div>
+                <img class="img-fluid" src="assets/img/Reel Thumbnail.jpg">
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section><!-- End Reel Section -->
+    </section><!-- End Reel Section -->
 
-  <!-- ======= Gallery Section ======= -->
-  <section class="section site-portfolio pt-0">
-    <div class="container">
-      <div class="row mb-5 align-items-center">
-        <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="gap">Featured Showcase</h2>
-          <!-- <p class="mb-0">Character Animation|Explainer Video|Motion Design</p> -->
-        </div>
-      </div>
-
-
-
-      <!--Committed Changes on 22-08-2023-->
-      <div class="box" data-aos="fade-up" data-aos-delay="200">
-        <button class="tablink" onclick="openPage('AI', this, '#323946')"><img src="assets/img/robot.png"
-            class="pic"><span class="text">&nbsp&nbspAI Art</span></button>
-        <button class="tablink" onclick="openPage('Animation', this, '#323946')" id="defaultOpen"><img
-            src="assets/img/animation_pic.png" class="pic"><span class="text">&nbsp&nbspAnimation</span></button>
-        <button class="tablink" onclick="openPage('Video', this, '#323946')"><img src="assets/img/video_edit.png"
-            class="pic"><span class="text">&nbsp&nbspVideo Editing</span></button>
-        <!-- id="btn1" -->
-        <div id="AI" class="tabcontent">
-          <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-            <!-- <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4"> -->
-            <main>
-              <div class="container_grid">
-
-              </div>
-            </main>
-            <script src="assets/js/imageGrid.js"></script>
-            <script src="assets/js/gridItems.js"></script>
-
-            <style>
-              * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-
-              main {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
-
-              .header {
-                position: relative;
-                width: 100%;
-                height: 100px;
-                display: flex;
-                align-items: center;
-                padding: 0 2vw;
-                z-index: 10;
-                background-color: #161616;
-                opacity: 1;
-              }
-
-              .container_grid {
-                position: relative;
-                width: 100%;
-                display: flex;
-                gap: 10px;
-              }
-            </style>
-            <!-- </div> -->
+    <!-- ======= Gallery Section ======= -->
+    <section class="section site-portfolio pt-0">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="gap">Featured Showcase</h2>
+            <!-- <p class="mb-0">Character Animation|Explainer Video|Motion Design</p> -->
           </div>
         </div>
 
-        <div id="Animation" class="tabcontent">
-          <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-            <!-- <div class="custom-container-animation"> -->
+
+
+        <!--Committed Changes on 22-08-2023-->
+        <div class="box" data-aos="fade-up" data-aos-delay="200">
+          <button class="tablink" onclick="openPage('AI', this, '#323946')"><img src="assets/img/robot.png"
+              class="pic"><span class="text">&nbsp&nbspAI Art</span></button>
+          <button class="tablink" onclick="openPage('Animation', this, '#323946')" id="defaultOpen"><img
+              src="assets/img/animation_pic.png" class="pic"><span class="text">&nbsp&nbspAnimation</span></button>
+          <button class="tablink" onclick="openPage('Video', this, '#323946')"><img src="assets/img/video_edit.png"
+              class="pic"><span class="text">&nbsp&nbspVideo Editing</span></button>
+          <!-- id="btn1" -->
+          <div id="AI" class="tabcontent">
+            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+              <!-- <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4"> -->
+              <main>
+                <div class="container_grid">
+
+                </div>
+              </main>
+              <script src="assets/js/imageGrid.js"></script>
+              <script src="assets/js/gridItems.js"></script>
+
+              <style>
+                * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                }
+
+                main {
+                  position: relative;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .header {
+                  position: relative;
+                  width: 100%;
+                  height: 100px;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 2vw;
+                  z-index: 10;
+                  background-color: #161616;
+                  opacity: 1;
+                }
+
+                .container_grid {
+                  position: relative;
+                  width: 100%;
+                  display: flex;
+                  gap: 10px;
+                }
+              </style>
+              <!-- </div> -->
+            </div>
+          </div>
+
+          <div id="Animation" class="tabcontent">
+            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+              <!-- <div class="custom-container-animation"> -->
               <main>
                 <div class="container_grid_animation">
                 </div>
@@ -193,18 +199,23 @@
                   width: 100%;
                   height: 100%;
                 }
+
                 .container_grid_animation {
                   position: relative;
                   width: 100%;
                   display: flex;
                   gap: 10px;
                 }
+
                 .dots-container {
                   position: absolute;
-                  bottom: 10px; /* Adjust distance from the bottom of the video */
-                  width: 100%; /* Ensure it spans the width of the video */
+                  bottom: 10px;
+                  /* Adjust distance from the bottom of the video */
+                  width: 100%;
+                  /* Ensure it spans the width of the video */
                   text-align: center;
-                  z-index: 1; /* Ensures dots are above the video */
+                  z-index: 1;
+                  /* Ensures dots are above the video */
                 }
 
                 .dot {
@@ -221,126 +232,139 @@
                   background-color: #717171;
                 }
               </style>
-          </div>
-        </div>
-
-        <div id="Video" class="tabcontent">
-          <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-1" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Secrets of Serpents</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/serpents.jpg">
-              </a>
-            </div>
-            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-2" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Power of Dreams</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/dreams.jpg">
-              </a>
-            </div>
-            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-3" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Sadhguru meets Wrestlers</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/wrestling.jpg">
-              </a>
-            </div>
-            <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-4" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Are Geniuses Born or Made?</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/Beethoven.jpg">
-              </a>
-            </div>
-            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-5" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>A Walk for Soil</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/A Walk for Soil.png">
-              </a>
-            </div>
-            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-              <a href="video/project-6" class="item-wrap fancybox">
-                <div class="work-info">
-                  <h3>Save Soil</h3>
-                </div>
-                <img class="img-fluid" src="assets/img/Save Soil (16-9).png">
-              </a>
             </div>
           </div>
-        </div>
-      </div>
 
-    </div>
-  </section><!-- End Gallery Section -->
-
-  <!-- </main> -->
-  <!-- End #main -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section class="section pt-0">
-    <div class="container" id="container">
-      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial">
-                <img src="assets/img/mihir_gosavi.jpg" alt="Image" class="img-fluid">
-                <p>Navin is an amazing personality. He is an extraordinary blend of creativity and technical expertise. From stunning 2D artistry to innovative AI-driven designs and captivating motion graphics, his versatility stands out. Truly, a powerhouse of talent redefining the creative landscape!</p>
-                <blockquote>
-                  <p>&mdash; Mihir Gosavi</p>
-                </blockquote>
+          <div id="Video" class="tabcontent">
+            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+              <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-1" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>Secrets of Serpents</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/serpents.jpg">
+                </a>
+              </div>
+              <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-2" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>Power of Dreams</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/dreams.jpg">
+                </a>
+              </div>
+              <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-3" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>Sadhguru meets Wrestlers</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/wrestling.jpg">
+                </a>
+              </div>
+              <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-4" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>Are Geniuses Born or Made?</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/Beethoven.jpg">
+                </a>
+              </div>
+              <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-5" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>A Walk for Soil</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/A Walk for Soil.png">
+                </a>
+              </div>
+              <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="video/project-6" class="item-wrap fancybox">
+                  <div class="work-info">
+                    <h3>Save Soil</h3>
+                  </div>
+                  <img class="img-fluid" src="assets/img/Save Soil (16-9).png">
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial">
-                <img src="assets/img/blank-profile-pic.png" alt="Image" class="img-fluid">
-                <blockquote>
-                  <p>Description</p>
-                </blockquote>
-                <p>&mdash; Name</p>
+      </div>
+    </section><!-- End Gallery Section -->
+
+    <!-- </main> -->
+    <!-- End #main -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section pt-0">
+      <div class="container" id="container">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial">
+                  <img src="assets/img/mihir_gosavi.jpg" alt="Image" class="img-fluid">
+                  <p>Navin is an amazing personality. He is an extraordinary blend of creativity and technical
+                    expertise. From stunning 2D artistry to innovative AI-driven designs and captivating motion
+                    graphics, his versatility stands out. Truly, a powerhouse of talent redefining the creative
+                    landscape!</p>
+                  <blockquote>
+                    <p>&mdash; Mihir Gosavi</p>
+                  </blockquote>
+                </div>
               </div>
             </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial">
+                  <img src="assets/img/blank-profile-pic.png" alt="Image" class="img-fluid">
+                  <blockquote>
+                    <p>Description</p>
+                  </blockquote>
+                  <p>&mdash; Name</p>
+                </div>
+              </div>
+            </div>
+
           </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-  <!-- End Testimonials Section -->
-
-  <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 social">
-          <a href="https://www.behance.net/navin-kumar" target="_blank"><span class="bi bi-behance"></span></a>
-          <a href="https://dribbble.com/navinmotion" target="_blank"><span class="bi bi-dribbble"></span></a>
-          <a href="https://www.instagram.com/navinmotion" target="_blank"><span class="bi bi-instagram"></span></a>
-          <a href="https://www.linkedin.com/in/navinkrprasad" target="_blank"><span class="bi bi-linkedin"></span></a>
-          <a href="https://vimeo.com/navinmotion" target="_blank"><span class="bi bi-vimeo"></span></a>
-        </div>
-        <div class="">
-          <p class="mb-1">&copy; <span class="name">Navin Kumar.</span> All Rights Reserved</p>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
+    <!-- End Testimonials Section -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <!-- ======= Footer ======= -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 social">
+            <a href="https://www.behance.net/navin-kumar" target="_blank"><span class="bi bi-behance"></span></a>
+            <a href="https://dribbble.com/navinmotion" target="_blank"><span class="bi bi-dribbble"></span></a>
+            <a href="https://www.instagram.com/navinmotion" target="_blank"><span class="bi bi-instagram"></span></a>
+            <a href="https://www.linkedin.com/in/navinkrprasad" target="_blank"><span class="bi bi-linkedin"></span></a>
+            <a href="https://vimeo.com/navinmotion" target="_blank"><span class="bi bi-vimeo"></span></a>
+          </div>
+          <div class="">
+            <p class="mb-1">&copy; <span class="name">Navin Kumar.</span> All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+  </div>
+
+  <script>
+    window.onload = function () {
+      // Hide loader
+      document.getElementById('loader').style.display = 'none';
+      // Show main content
+      document.getElementById('main-content').style.display = 'block';
+    };
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
