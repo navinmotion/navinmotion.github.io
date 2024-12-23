@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '',
       type: 'video',
       videos: [
-        'assets/video/spineBoy-walking.mp4',
-        'assets/video/spineBoy-idle.mp4'
+        'assets/video/spineBoy-walking.webm',
+        'assets/video/spineBoy-idle.webm'
       ]
     },
     {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '',
       type: 'video',
       videos: [
-        'assets/video/Maa-Durga.mp4',
-        'assets/video/Maa-Durga (Idle).mp4',
-        'assets/video/Maa-Durga (Skeletal).mp4'
+        'assets/video/Maa-Durga.webm',
+        'assets/video/Maa-Durga (Idle).webm',
+        'assets/video/Maa-Durga (Skeletal).webm'
       ]
     },
     {
@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '',
       type: 'video',
       videos: [
-        'assets/video/Egypt-Queen.mp4',
-        'assets/video/Egypt-Queen (BTS).mp4',
-        'assets/video/Egypt-Queen (with bones).mp4'
+        'assets/video/Egypt-Queen.webm',
+        'assets/video/Egypt-Queen (BTS).webm',
+        'assets/video/Egypt-Queen (with bones).webm'
       ]
     },
     {
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '',
       type: 'video',
       videos: [
-        'assets/video/Viking-Warrior.mp4',
-        'assets/video/Viking-Warrior (BTS).mp4',
-        'assets/video/Viking-Warrior (with bones).mp4'
+        'assets/video/Viking-Warrior.webm',
+        'assets/video/Viking-Warrior (BTS).webm',
+        'assets/video/Viking-Warrior (with bones).webm'
       ]
     }
   ];
