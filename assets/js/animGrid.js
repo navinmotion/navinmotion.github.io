@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Sage Welcome Ux/Ui',
       link: 'animation/project-1',
       type: 'image',
-      image: 'assets/img/sage.png'
+      image: 'assets/img/sage.webp'
     },
     {
       title: 'Spine Boy',
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'FlyingPCG',
       link: 'animation/project-5',
       type: 'image',
-      image: 'assets/img/primecraft.png'
+      image: 'assets/img/primecraft.webp'
     },
     {
       title: 'Maa Durga',
