@@ -1,6 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container_grid_animation');
 
+  function loadSpinePlayerResources(callback) {
+    // Load CSS
+    const spineCSS = document.createElement('link');
+    spineCSS.rel = 'stylesheet';
+    spineCSS.href = 'assets/css/spine-player.css';
+    document.head.appendChild(spineCSS);
+
+    spineCSS.onerror = () => {
+      console.error('Failed to load Spine CSS');
+    };
+
+    // Load JS
+    const spineJS = document.createElement('script');
+    spineJS.src = 'assets/js/spine-player.js';
+    document.body.appendChild(spineJS);
+
+    spineJS.onload = () => {
+      console.log('Spine JS loaded');
+      if (callback) callback(); // Execute callback when JS is loaded
+    };
+
+    spineJS.onerror = () => {
+      console.error('Failed to load Spine JS');
+    };
+  }
+
   // Check if container exists
   if (!container) {
     console.error('Container not found: .container_grid_animation');
@@ -18,8 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Anubis',
       link: '',
-      type: 'video',
-      videos: ['assets/video/Anubis-gameplay.webm']
+      type: 'spine-player',
+      spineData: {
+        jsonUrl: 'assets/spine/Anubis.json',
+        atlasUrl: 'assets/spine/Anubis.atlas',
+        animation: '02 walk',
+        backgroundColor: '#1f242d'
+      }
     },
     {
       title: 'Spine Boy',
@@ -99,22 +130,27 @@ document.addEventListener('DOMContentLoaded', () => {
         let anchor = document.createElement('a');
         if (post.link) {
           anchor.href = post.link; // Set the link for the next page if it exists
-        } else {
+          anchor.classList.add('item-wrap', 'fancybox', 'hover');
+        } 
+        // else {
           // Remove href attribute and prevent any action
-          anchor.href = "javascript:void(0)"; // Ensures no action is triggered
-          anchor.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default action
-          });
-        }
-        anchor.classList.add('item-wrap', 'fancybox');
+          // anchor.href = "javascript:void(0)"; // Ensures no action is triggered
+          // anchor.classList.add('item-wrap', 'fancybox');
+          // anchor.addEventListener('click', (event) => {
+          //   event.preventDefault(); // Prevent default action
+          // });
+        // }
+        // anchor.classList.add('item-wrap', 'fancybox');
 
         let workInfo = document.createElement('div');
         workInfo.classList.add('work-info');
 
-        let heading = document.createElement('h3');
-        heading.textContent = post.title; // Set the title of the post
-
-        workInfo.appendChild(heading);
+        if(post.link){
+          let heading = document.createElement('h3');
+          heading.textContent = post.title; // Set the title of the post
+          workInfo.appendChild(heading);
+        }
+        
 
         // Check if the post is an image or a video
         if (post.type === 'image') {
@@ -122,23 +158,23 @@ document.addEventListener('DOMContentLoaded', () => {
           image.src = post.image;
           image.classList.add('img-fluid');
           anchor.appendChild(image);
-        } 
+        }
         else if (post.type === 'video') {
           if (post.videos && Array.isArray(post.videos)) {
             // Create a container for the video slider
             let slider = document.createElement('div');
             slider.classList.add('slider');
-        
+
             // Create a dots container
             let dotsContainer = document.createElement('div');
             dotsContainer.classList.add('dots-container');
-        
+
             // Add videos as slides
             post.videos.forEach((videoSrc, index) => {
               let slide = document.createElement('div');
               slide.classList.add('slide');
               if (index !== 0) slide.style.display = 'none'; // Hide all slides except the first
-        
+
               let video = document.createElement('video');
               video.src = videoSrc;
               video.classList.add('img-fluid');
@@ -146,32 +182,32 @@ document.addEventListener('DOMContentLoaded', () => {
               video.muted = true;
               video.controls = false;
               video.loop = true;
-        
+
               slide.appendChild(video);
               slider.appendChild(slide);
-        
+
               // Create a dot for each video
               let dot = document.createElement('span');
               dot.classList.add('dot');
               if (index === 0) dot.classList.add('active'); // Highlight the first dot initially
               dotsContainer.appendChild(dot);
             });
-        
+
             // Add the slider and dots container to the anchor
             slider.appendChild(dotsContainer);
             anchor.appendChild(slider);
-        
+
             // Functions for slider functionality
             let currentIndex = 0;
-        
+
             function showSlide(n) {
               const slides = slider.querySelectorAll('.slide');
               const dots = dotsContainer.querySelectorAll('.dot');
-        
+
               slides.forEach((slide, index) => {
                 slide.style.display = index === n ? 'block' : 'none';
               });
-        
+
               dots.forEach((dot, index) => {
                 if (index === n) {
                   dot.classList.add('active');
@@ -180,45 +216,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
               });
             }
-        
+
             function showNextSlide() {
               const slides = slider.querySelectorAll('.slide');
               currentIndex = (currentIndex + 1) % slides.length;
               showSlide(currentIndex);
             }
-        
+
             function showPreviousSlide() {
               const slides = slider.querySelectorAll('.slide');
               currentIndex = (currentIndex - 1 + slides.length) % slides.length;
               showSlide(currentIndex);
             }
-        
+
             // Auto-advance functionality
             setInterval(() => {
               showNextSlide();
             }, 5000); // Auto-advance every 5 seconds
-        
+
             // Swipe gesture handling
             let touchStartX;
             slider.addEventListener('touchstart', (e) => {
               touchStartX = e.touches[0].clientX;
             });
-        
+
             slider.addEventListener('touchend', (e) => {
               const touchEndX = e.changedTouches[0].clientX;
               const delta = touchEndX - touchStartX;
-        
+
               if (delta > 30) {
                 showPreviousSlide(); // Swipe right
               } else if (delta < -30) {
                 showNextSlide(); // Swipe left
               }
             });
-        
+
             // Show the first slide and start autoplay
             showSlide(0);
             slider.querySelector('.slide').querySelector('video').play();
-          } else {
+          }
+          else {
             // Handle single video as before
             let video = document.createElement('video');
             video.src = post.video;
@@ -228,8 +265,34 @@ document.addEventListener('DOMContentLoaded', () => {
             video.loop = true;
             anchor.appendChild(video);
           }
-        }        
-        
+        }
+        else if (post.type === 'spine-player') {
+          console.log("reaching here");
+          let spineContainer = document.createElement('div');
+          spineContainer.id = "spine_container";
+          spineContainer.style.width = '100%';
+          spineContainer.style.height = '500px';
+
+          // Append Spine Player container to anchor
+          anchor.appendChild(spineContainer);
+
+          // Dynamically load the resources and initialize Spine Player
+          loadSpinePlayerResources(() => {
+            console.log('Initializing Spine Player...');
+            // Initialize Spine Player after resources are loaded
+            new spine.SpinePlayer(spineContainer.id, {
+              jsonUrl: post.spineData.jsonUrl,
+              atlasUrl: post.spineData.atlasUrl,
+              animation: post.spineData.animation,
+              backgroundColor: post.spineData.backgroundColor,
+              showControls: true,
+              premultipliedAlpha: true,
+              alpha: true,
+              defaultMix: 1
+            });
+          });
+        }
+
         anchor.appendChild(workInfo);
         postDiv.appendChild(anchor);
         column.appendChild(postDiv);
