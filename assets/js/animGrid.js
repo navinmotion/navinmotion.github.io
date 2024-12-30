@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/img/sage.webp'
     },
     {
+      title: 'Anubis',
+      link: '',
+      type: 'video',
+      videos: ['assets/video/Anubis-gameplay.webm']
+    },
+    {
       title: 'Spine Boy',
       link: '',
       type: 'video',

@@ -1021,6 +1021,7 @@ img.logo {
   width: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
 }
 
 .slide {
