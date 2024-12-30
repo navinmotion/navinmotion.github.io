@@ -1,0 +1,111 @@
+
+Anubis.png
+size: 480,1050
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bck-Arm
+  rotate: false
+  xy: 285, 334
+  size: 111, 325
+  orig: 111, 325
+  offset: 0, 0
+  index: -1
+Bck-Ear
+  rotate: false
+  xy: 398, 453
+  size: 43, 77
+  orig: 43, 77
+  offset: 0, 0
+  index: -1
+Bck-Leg
+  rotate: false
+  xy: 75, 646
+  size: 163, 402
+  orig: 163, 402
+  offset: 0, 0
+  index: -1
+Bck-Scarf
+  rotate: false
+  xy: 398, 532
+  size: 49, 100
+  orig: 49, 100
+  offset: 0, 0
+  index: -1
+Crown
+  rotate: false
+  xy: 398, 634
+  size: 80, 84
+  orig: 80, 84
+  offset: 0, 0
+  index: -1
+Dhoti
+  rotate: false
+  xy: 75, 353
+  size: 208, 291
+  orig: 208, 291
+  offset: 0, 0
+  index: -1
+Drape
+  rotate: false
+  xy: 384, 720
+  size: 68, 328
+  orig: 68, 328
+  offset: 0, 0
+  index: -1
+Frnt-Arm
+  rotate: true
+  xy: 2, 2
+  size: 101, 338
+  orig: 101, 338
+  offset: 0, 0
+  index: -1
+Frnt-Ear
+  rotate: true
+  xy: 354, 126
+  size: 64, 117
+  orig: 64, 117
+  offset: 0, 0
+  index: -1
+Frnt-Leg
+  rotate: false
+  xy: 240, 661
+  size: 142, 387
+  orig: 142, 387
+  offset: 0, 0
+  index: -1
+Frnt-Scarf
+  rotate: false
+  xy: 260, 127
+  size: 92, 205
+  orig: 92, 205
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 354, 192
+  size: 140, 115
+  orig: 140, 115
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 342, 25
+  size: 92, 99
+  orig: 92, 99
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 2, 105
+  size: 256, 246
+  orig: 256, 246
+  offset: 0, 0
+  index: -1
+Weapon
+  rotate: true
+  xy: 2, 387
+  size: 661, 71
+  orig: 661, 71
+  offset: 0, 0
+  index: -1
