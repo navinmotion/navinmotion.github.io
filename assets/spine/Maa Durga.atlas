@@ -1,0 +1,300 @@
+
+Maa Durga.png
+size: 1916,363
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Crown
+  rotate: true
+  xy: 1703, 178
+  size: 113, 139
+  orig: 113, 139
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 1844, 213
+  size: 70, 78
+  orig: 70, 78
+  offset: 0, 0
+  index: -1
+Hair
+  rotate: true
+  xy: 293, 30
+  size: 331, 327
+  orig: 331, 327
+  offset: 0, 0
+  index: -1
+Head-L
+  rotate: false
+  xy: 2, 15
+  size: 289, 346
+  orig: 289, 346
+  offset: 0, 0
+  index: -1
+L-Ear-L
+  rotate: true
+  xy: 654, 5
+  size: 46, 42
+  orig: 46, 42
+  offset: 0, 0
+  index: -1
+L-Eye-L
+  rotate: false
+  xy: 387, 12
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+L-Eyebrow
+  rotate: false
+  xy: 2, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+L-Eyeclosed
+  rotate: true
+  xy: 327, 9
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+L-Eyelash
+  rotate: true
+  xy: 342, 9
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+L-Eyewhite
+  rotate: true
+  xy: 293, 5
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1
+L-Forearm
+  rotate: false
+  xy: 1064, 4
+  size: 54, 85
+  orig: 54, 85
+  offset: 0, 0
+  index: -1
+L-Hand
+  rotate: true
+  xy: 959, 15
+  size: 36, 31
+  orig: 36, 31
+  offset: 0, 0
+  index: -1
+L-L-Eyeclosed
+  rotate: false
+  xy: 419, 13
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+L-Pupil
+  rotate: false
+  xy: 46, 3
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+L-R-Eyeclosed
+  rotate: false
+  xy: 435, 14
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+LArm
+  rotate: true
+  xy: 802, 12
+  size: 39, 65
+  orig: 39, 65
+  offset: 0, 0
+  index: -1
+LBLeg
+  rotate: false
+  xy: 1302, 113
+  size: 103, 248
+  orig: 103, 248
+  offset: 0, 0
+  index: -1
+LFLeg
+  rotate: false
+  xy: 1064, 91
+  size: 131, 270
+  orig: 131, 270
+  offset: 0, 0
+  index: -1
+LH2
+  rotate: true
+  xy: 1407, 121
+  size: 240, 98
+  orig: 240, 98
+  offset: 0, 0
+  index: -1
+LH3
+  rotate: false
+  xy: 1737, 293
+  size: 162, 68
+  orig: 162, 68
+  offset: 0, 0
+  index: -1
+LH4
+  rotate: false
+  xy: 1609, 162
+  size: 92, 199
+  orig: 92, 199
+  offset: 0, 0
+  index: -1
+Mouth
+  rotate: false
+  xy: 70, 5
+  size: 22, 8
+  orig: 22, 8
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 622, 4
+  size: 30, 47
+  orig: 30, 47
+  offset: 0, 0
+  index: -1
+Nose
+  rotate: true
+  xy: 109, 5
+  size: 8, 4
+  orig: 8, 4
+  offset: 0, 0
+  index: -1
+R-Ear-L
+  rotate: true
+  xy: 698, 5
+  size: 46, 42
+  orig: 46, 42
+  offset: 0, 0
+  index: -1
+R-Eye-L
+  rotate: false
+  xy: 403, 12
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+R-Eyebrow
+  rotate: false
+  xy: 24, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+R-Eyeclosed
+  rotate: true
+  xy: 357, 9
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+R-Eyelash
+  rotate: true
+  xy: 372, 9
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+R-Eyewhite
+  rotate: true
+  xy: 310, 6
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+R-Forearm
+  rotate: false
+  xy: 742, 11
+  size: 58, 40
+  orig: 64, 40
+  offset: 0, 0
+  index: -1
+R-Hand
+  rotate: true
+  xy: 928, 14
+  size: 37, 29
+  orig: 37, 29
+  offset: 0, 0
+  index: -1
+R-Pupil
+  rotate: false
+  xy: 58, 3
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+RArm
+  rotate: true
+  xy: 869, 14
+  size: 37, 57
+  orig: 37, 57
+  offset: 0, 0
+  index: -1
+RBLeg
+  rotate: true
+  xy: 1335, 8
+  size: 103, 248
+  orig: 103, 248
+  offset: 0, 0
+  index: -1
+RFLeg
+  rotate: false
+  xy: 1197, 99
+  size: 103, 262
+  orig: 103, 262
+  offset: 0, 0
+  index: -1
+RH2
+  rotate: false
+  xy: 1120, 8
+  size: 213, 81
+  orig: 213, 81
+  offset: 0, 0
+  index: -1
+RH3
+  rotate: false
+  xy: 1585, 7
+  size: 150, 152
+  orig: 150, 152
+  offset: 0, 0
+  index: -1
+RH4
+  rotate: false
+  xy: 1507, 161
+  size: 100, 200
+  orig: 100, 200
+  offset: 0, 0
+  index: -1
+Third_Eye
+  rotate: true
+  xy: 94, 5
+  size: 8, 13
+  orig: 8, 13
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 1737, 17
+  size: 149, 159
+  orig: 149, 159
+  offset: 0, 0
+  index: -1
+Trishul
+  rotate: false
+  xy: 622, 53
+  size: 440, 308
+  orig: 440, 308
+  offset: 0, 0
+  index: -1
