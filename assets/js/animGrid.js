@@ -78,6 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
+      title: 'Maa Durga',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '500px',
+        jsonUrl: 'assets/spine/Maa Durga.json',
+        atlasUrl: 'assets/spine/Maa Durga.atlas',
+        animation: 'idle',
+        backgroundColor: '#1f242d'
+      }
+    },
+    {
       title: 'Chibi Boy',
       link: '',
       type: 'spine-player',
@@ -91,41 +104,43 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
+      title: 'Viking Warrior',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '270px',
+        jsonUrl: 'assets/spine/Viking-Warrior.json',
+        atlasUrl: 'assets/spine/Viking-Warrior.atlas',
+        animation: '',
+        backgroundColor: '#1f242d',
+        video: [
+          'assets/video/Viking-Warrior.webm',
+        ]
+      }
+    },
+    {
+      title: 'Egypt Queen',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '472px',
+        jsonUrl: 'assets/spine/Egypt-Queen.json',
+        atlasUrl: 'assets/spine/Egypt-Queen.atlas',
+        animation: '',
+        backgroundColor: '#1f242d',
+        video: [
+          'assets/video/Egypt-Queen.webm',
+        ]
+      }
+    },
+    {
       title: 'FlyingPCG',
       link: 'animation/project-5',
       type: 'image',
       image: 'assets/img/primecraft.webp'
     },
-    {
-      title: 'Maa Durga',
-      link: '',
-      type: 'video',
-      videos: [
-        'assets/video/Maa-Durga.webm',
-        'assets/video/Maa-Durga (Idle).webm',
-        'assets/video/Maa-Durga (Skeletal).webm'
-      ]
-    },
-    {
-      title: 'Egypt Queen',
-      link: '',
-      type: 'video',
-      videos: [
-        'assets/video/Egypt-Queen.webm',
-        'assets/video/Egypt-Queen (BTS).webm',
-        'assets/video/Egypt-Queen (with bones).webm'
-      ]
-    },
-    {
-      title: 'Viking Warrior',
-      link: '',
-      type: 'video',
-      videos: [
-        'assets/video/Viking-Warrior.webm',
-        'assets/video/Viking-Warrior (BTS).webm',
-        'assets/video/Viking-Warrior (with bones).webm'
-      ]
-    }
   ];
 
   // Updated generateMasonryGrid function
@@ -160,17 +175,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (post.link) {
           anchor.href = post.link; // Set the link for the next page if it exists
           anchor.classList.add('item-wrap', 'fancybox', 'hover');
-        } 
+        }
 
         let workInfo = document.createElement('div');
         workInfo.classList.add('work-info');
 
-        if(post.link){
+        if (post.link) {
           let heading = document.createElement('h3');
           heading.textContent = post.title; // Set the title of the post
           workInfo.appendChild(heading);
         }
-        
+
 
         // Check if the post is an image or a video
         if (post.type === 'image') {
@@ -287,32 +302,97 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         else if (post.type === 'spine-player') {
-          console.log("reaching here");
+          // Create a container for the slider
+          let slider = document.createElement('div');
+          slider.classList.add('slider');
+      
           let spineContainer = document.createElement('div');
           spineContainer.id = `spine_container_${Math.random().toString(36).substring(2, 15)}`;
           spineContainer.style.width = post.spineData.width;
           spineContainer.style.height = post.spineData.height;
-          console.log(spineContainer.id);
-
-          // Append Spine Player container to anchor
-          anchor.appendChild(spineContainer);
-
+      
+          slider.appendChild(spineContainer);
+      
           // Dynamically load the resources and initialize Spine Player
           loadSpinePlayerResources(() => {
-            console.log('Initializing Spine Player...');
-            // Initialize Spine Player after resources are loaded
-            new spine.SpinePlayer(spineContainer.id, {
-              jsonUrl: post.spineData.jsonUrl,
-              atlasUrl: post.spineData.atlasUrl,
-              animation: post.spineData.animation,
-              backgroundColor: post.spineData.backgroundColor,
-              showControls: true,
-              premultipliedAlpha: true,
-              alpha: true,
-              defaultMix: 1
-            });
+              console.log('Initializing Spine Player...');
+              new spine.SpinePlayer(spineContainer.id, {
+                  jsonUrl: post.spineData.jsonUrl,
+                  atlasUrl: post.spineData.atlasUrl,
+                  animation: post.spineData.animation,
+                  backgroundColor: post.spineData.backgroundColor,
+                  showControls: true,
+                  premultipliedAlpha: true,
+                  alpha: true,
+                  defaultMix: 1
+              });
           });
-        }
+      
+          // Check if videos are present
+          let hasVideos = post.spineData.video && Array.isArray(post.spineData.video) && post.spineData.video.length > 0;
+      
+          let videoSlides = [];
+          if (hasVideos) {
+              // Add videos as slides
+              videoSlides = post.spineData.video.map((videoSrc) => {
+                  let slide = document.createElement('div');
+                  slide.classList.add('slide');
+                  slide.style.display = 'none'; // Initially hidden
+      
+                  let video = document.createElement('video');
+                  video.src = videoSrc;
+                  video.classList.add('img-fluid');
+                  video.autoplay = true;
+                  video.muted = true;
+                  video.controls = false;
+                  video.loop = true;
+      
+                  slide.appendChild(video);
+                  return slide;
+              });
+      
+              videoSlides.forEach((slide) => slider.appendChild(slide));
+          }
+      
+          // Function to handle slide transitions
+          let currentIndex = 0; // Start with the video slides
+          const slides = slider.querySelectorAll('.slide');
+          const totalSlides = slides.length + 1; // +1 for the Spine Player
+      
+          function showNextContent() {
+              if (currentIndex < videoSlides.length) {
+                  // Show video slides one by one
+                  spineContainer.style.display = 'none';
+                  slides.forEach((slide, index) => {
+                      slide.style.display = index === currentIndex ? 'block' : 'none';
+                  });
+                  currentIndex = (currentIndex + 1);
+                  setTimeout(() => showNextContent(), 5000); // Switch to next slide after 5 seconds
+              } else if (currentIndex === videoSlides.length) {
+                  // Go to Spine Player after all video slides have been shown
+                  spineContainer.style.display = 'block';
+                  slides.forEach((slide) => (slide.style.display = 'none'));
+                  currentIndex++;
+                  setTimeout(() => showNextContent(), 5000); // Display Spine Player for 5 seconds
+              } else {
+                  // If reached the end, start over with the videos
+                  currentIndex = 0;
+                  showNextContent();
+              }
+          }
+      
+          // Initialize the cycle
+          showNextContent();
+      
+          // Add the slider to the anchor
+          anchor.appendChild(slider);
+      }
+      
+      
+
+
+
+
 
         anchor.appendChild(workInfo);
         postDiv.appendChild(anchor);
@@ -339,13 +419,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     previousScreenSize = innerWidth;
   });
-
-  // Page Load
-  if (previousScreenSize < 600) {
-    generateMasonryGrid(1, posts);
-  } else if (previousScreenSize >= 600 && previousScreenSize < 1000) {
-    generateMasonryGrid(2, posts);
-  } else {
-    generateMasonryGrid(3, posts);
-  }
+  // Load Spine resources and then render the grid
+  loadSpinePlayerResources(() => {
+    if (previousScreenSize < 600) {
+      generateMasonryGrid(1, posts);
+    } else if (previousScreenSize >= 600 && previousScreenSize < 1000) {
+      generateMasonryGrid(2, posts);
+    } else {
+      generateMasonryGrid(3, posts);
+    }
+  });
 });
