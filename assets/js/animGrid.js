@@ -331,9 +331,10 @@ document.addEventListener('DOMContentLoaded', () => {
           // Check if videos are present
           let hasVideos = post.spineData.video && Array.isArray(post.spineData.video) && post.spineData.video.length > 0;
       
+          let videoSlides = [];
           if (hasVideos) {
               // Add videos as slides
-              let videoSlides = post.spineData.video.map((videoSrc) => {
+              videoSlides = post.spineData.video.map((videoSrc) => {
                   let slide = document.createElement('div');
                   slide.classList.add('slide');
                   slide.style.display = 'none'; // Initially hidden
@@ -351,42 +352,42 @@ document.addEventListener('DOMContentLoaded', () => {
               });
       
               videoSlides.forEach((slide) => slider.appendChild(slide));
-      
-              // Function to handle slide transitions
-              let currentIndex = -1; // Start with Spine Player
-              const slides = slider.querySelectorAll('.slide');
-              const totalSlides = slides.length;
-              console.log(totalSlides);
-              function showNextContent() {
-                  if (currentIndex === -1) {
-                      // Show Spine Player
-                      spineContainer.style.display = 'block';
-                      slides.forEach((slide) => (slide.style.display = 'none'));
-                      currentIndex = 0;
-                      setTimeout(() => showNextContent(), 5000); // Display Spine Player for 5 seconds
-                  } else if (currentIndex < totalSlides) {
-                      // Show video slides one by one
-                      spineContainer.style.display = 'none';
-                      slides.forEach((slide, index) => {
-                          slide.style.display = index === currentIndex ? 'block' : 'none';
-                      });
-                      currentIndex = (currentIndex + 1);
-                      console.log(currentIndex);
-                      setTimeout(() => showNextContent(), 5000); // Switch to next slide after 5 seconds
-                  } else {
-                      // Go back to Spine Player
-                      currentIndex = -1;
-                      showNextContent();
-                  }
-              }
-      
-              // Initialize the cycle
-              showNextContent();
           }
+      
+          // Function to handle slide transitions
+          let currentIndex = 0; // Start with the video slides
+          const slides = slider.querySelectorAll('.slide');
+          const totalSlides = slides.length + 1; // +1 for the Spine Player
+      
+          function showNextContent() {
+              if (currentIndex < videoSlides.length) {
+                  // Show video slides one by one
+                  spineContainer.style.display = 'none';
+                  slides.forEach((slide, index) => {
+                      slide.style.display = index === currentIndex ? 'block' : 'none';
+                  });
+                  currentIndex = (currentIndex + 1);
+                  setTimeout(() => showNextContent(), 5000); // Switch to next slide after 5 seconds
+              } else if (currentIndex === videoSlides.length) {
+                  // Go to Spine Player after all video slides have been shown
+                  spineContainer.style.display = 'block';
+                  slides.forEach((slide) => (slide.style.display = 'none'));
+                  currentIndex++;
+                  setTimeout(() => showNextContent(), 5000); // Display Spine Player for 5 seconds
+              } else {
+                  // If reached the end, start over with the videos
+                  currentIndex = 0;
+                  showNextContent();
+              }
+          }
+      
+          // Initialize the cycle
+          showNextContent();
       
           // Add the slider to the anchor
           anchor.appendChild(slider);
       }
+      
       
 
 
