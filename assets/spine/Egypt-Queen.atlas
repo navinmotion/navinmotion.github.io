@@ -1,0 +1,181 @@
+
+Egypt-Queen.png
+size: 2004,1040
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 426, 18
+  size: 225, 388
+  orig: 225, 388
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 197, 18
+  size: 227, 388
+  orig: 227, 388
+  offset: 0, 0
+  index: -1
+3
+  rotate: true
+  xy: 1825, 141
+  size: 93, 167
+  orig: 93, 167
+  offset: 0, 0
+  index: -1
+4
+  rotate: true
+  xy: 1825, 236
+  size: 94, 167
+  orig: 94, 167
+  offset: 0, 0
+  index: -1
+BG
+  rotate: true
+  xy: 2, 408
+  size: 630, 625
+  orig: 630, 625
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 1388, 33
+  size: 297, 435
+  orig: 297, 435
+  offset: 0, 0
+  index: -1
+L-Bck-hair
+  rotate: false
+  xy: 653, 59
+  size: 226, 347
+  orig: 226, 347
+  offset: 0, 0
+  index: -1
+L-Eye-closed
+  rotate: false
+  xy: 1174, 3
+  size: 105, 70
+  orig: 105, 70
+  offset: 0, 0
+  index: -1
+L-Eyebrow
+  rotate: false
+  xy: 735, 9
+  size: 110, 48
+  orig: 110, 48
+  offset: 0, 0
+  index: -1
+L-Eyelash
+  rotate: false
+  xy: 958, 21
+  size: 89, 46
+  orig: 89, 46
+  offset: 0, 0
+  index: -1
+L-Eyewhite
+  rotate: true
+  xy: 1139, 2
+  size: 71, 33
+  orig: 71, 33
+  offset: 0, 0
+  index: -1
+L-eyeball
+  rotate: true
+  xy: 694, 7
+  size: 50, 39
+  orig: 50, 39
+  offset: 0, 0
+  index: -1
+R-Bck-hair
+  rotate: false
+  xy: 881, 69
+  size: 227, 337
+  orig: 227, 337
+  offset: 0, 0
+  index: -1
+R-Eye-closed
+  rotate: false
+  xy: 1281, 3
+  size: 105, 70
+  orig: 105, 70
+  offset: 0, 0
+  index: -1
+R-Eyebrow
+  rotate: false
+  xy: 847, 9
+  size: 109, 48
+  orig: 109, 48
+  offset: 0, 0
+  index: -1
+R-Eyelash
+  rotate: false
+  xy: 1049, 21
+  size: 88, 46
+  orig: 88, 46
+  offset: 0, 0
+  index: -1
+R-Eyewhite
+  rotate: true
+  xy: 1370, 336
+  size: 70, 33
+  orig: 70, 33
+  offset: 0, 0
+  index: -1
+R-eyeball
+  rotate: true
+  xy: 653, 6
+  size: 51, 39
+  orig: 51, 39
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1883, 332
+  size: 475, 117
+  orig: 475, 117
+  offset: 0, 0
+  index: -1
+crown
+  rotate: true
+  xy: 1110, 75
+  size: 331, 258
+  orig: 331, 258
+  offset: 0, 0
+  index: -1
+earing_left
+  rotate: false
+  xy: 1883, 919
+  size: 119, 119
+  orig: 119, 119
+  offset: 0, 0
+  index: -1
+earing_right
+  rotate: false
+  xy: 1883, 809
+  size: 118, 108
+  orig: 118, 108
+  offset: 0, 0
+  index: -1
+light-rays
+  rotate: true
+  xy: 629, 408
+  size: 630, 625
+  orig: 630, 625
+  offset: 0, 0
+  index: -1
+neck_peice
+  rotate: true
+  xy: 2, 17
+  size: 389, 193
+  orig: 389, 193
+  offset: 0, 0
+  index: -1
+soft-glow
+  rotate: true
+  xy: 1256, 408
+  size: 630, 625
+  orig: 630, 625
+  offset: 0, 0
+  index: -1

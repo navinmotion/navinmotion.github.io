@@ -1,7 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.container_grid_animation');
 
+  let spineResourcesLoaded = false;
+  let spineJSLoaded = false;
+
   function loadSpinePlayerResources(callback) {
+    if (spineResourcesLoaded) {
+      // Resources are already loaded, directly call the callback
+      callback();
+      return;
+    }
+
+    if (spineJSLoaded) {
+      // If the Spine JS is already loaded, wait for the callback
+      const interval = setInterval(() => {
+        if (window.spine) { // Check if the spine object is available
+          clearInterval(interval);
+          callback();
+        }
+      }, 100); // Check every 100ms
+      return;
+    }
+
     // Load CSS
     const spineCSS = document.createElement('link');
     spineCSS.rel = 'stylesheet';
@@ -19,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     spineJS.onload = () => {
       console.log('Spine JS loaded');
+      spineJSLoaded = true;
       if (callback) callback(); // Execute callback when JS is loaded
     };
 
@@ -26,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to load Spine JS');
     };
   }
+
+
 
   // Check if container exists
   if (!container) {
@@ -46,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link: '',
       type: 'spine-player',
       spineData: {
+        width: '100%',
+        height: '500px',
         jsonUrl: 'assets/spine/Anubis.json',
         atlasUrl: 'assets/spine/Anubis.atlas',
         animation: '02 walk',
@@ -53,13 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
-      title: 'Spine Boy',
+      title: 'Chibi Boy',
       link: '',
-      type: 'video',
-      videos: [
-        'assets/video/spineBoy-walking.webm',
-        'assets/video/spineBoy-idle.webm'
-      ]
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '500px',
+        jsonUrl: 'assets/spine/Chibi-Boy.json',
+        atlasUrl: 'assets/spine/Chibi-Boy.atlas',
+        animation: 'walking',
+        backgroundColor: '#1f242d'
+      }
     },
     {
       title: 'FlyingPCG',
@@ -132,15 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
           anchor.href = post.link; // Set the link for the next page if it exists
           anchor.classList.add('item-wrap', 'fancybox', 'hover');
         } 
-        // else {
-          // Remove href attribute and prevent any action
-          // anchor.href = "javascript:void(0)"; // Ensures no action is triggered
-          // anchor.classList.add('item-wrap', 'fancybox');
-          // anchor.addEventListener('click', (event) => {
-          //   event.preventDefault(); // Prevent default action
-          // });
-        // }
-        // anchor.classList.add('item-wrap', 'fancybox');
 
         let workInfo = document.createElement('div');
         workInfo.classList.add('work-info');
@@ -269,9 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (post.type === 'spine-player') {
           console.log("reaching here");
           let spineContainer = document.createElement('div');
-          spineContainer.id = "spine_container";
-          spineContainer.style.width = '100%';
-          spineContainer.style.height = '500px';
+          spineContainer.id = `spine_container_${Math.random().toString(36).substring(2, 15)}`;
+          spineContainer.style.width = post.spineData.width;
+          spineContainer.style.height = post.spineData.height;
+          console.log(spineContainer.id);
 
           // Append Spine Player container to anchor
           anchor.appendChild(spineContainer);
