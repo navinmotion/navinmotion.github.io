@@ -950,6 +950,11 @@ img.logo {
   }
 }
 
+@media (max-width: 1080px){
+  #logo_section{
+    justify-content: space-between;
+  }
+}
 
 @media (max-width: 780px) {
   .section p {
