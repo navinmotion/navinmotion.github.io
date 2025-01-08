@@ -91,19 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
-      title: 'Chibi Boy',
-      link: '',
-      type: 'spine-player',
-      spineData: {
-        width: '100%',
-        height: '500px',
-        jsonUrl: 'assets/spine/Chibi-Boy.json',
-        atlasUrl: 'assets/spine/Chibi-Boy.atlas',
-        animation: 'walking',
-        backgroundColor: '#1f242d'
-      }
-    },
-    {
       title: 'Viking Warrior',
       link: '',
       type: 'spine-player',
@@ -120,12 +107,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
+      title: 'Chibi Boy',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '500px',
+        jsonUrl: 'assets/spine/Chibi-Boy.json',
+        atlasUrl: 'assets/spine/Chibi-Boy.atlas',
+        animation: 'walking',
+        backgroundColor: '#1f242d'
+      }
+    },
+    {
+      title: 'Magic Crystal',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '400px',
+        jsonUrl: 'assets/spine/magic-crystal-stone.json',
+        atlasUrl: 'assets/spine/magic-crystal-stone.atlas',
+        animation: '',
+        backgroundColor: '#1f242d'
+      }
+    },
+    {
       title: 'Egypt Queen',
       link: '',
       type: 'spine-player',
       spineData: {
         width: '100%',
-        height: '472px',
+        height: '400px',
         jsonUrl: 'assets/spine/Egypt-Queen.json',
         atlasUrl: 'assets/spine/Egypt-Queen.atlas',
         animation: '',
