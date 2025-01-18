@@ -1,0 +1,258 @@
+
+samurai.png
+size: 1857,1039
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Back-Apron
+  rotate: false
+  xy: 2, 10
+  size: 200, 117
+  orig: 200, 117
+  offset: 0, 0
+  index: -1
+Eyewhite
+  rotate: false
+  xy: 399, 52
+  size: 203, 75
+  orig: 203, 75
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 1339, 412
+  size: 279, 323
+  orig: 279, 323
+  offset: 0, 0
+  index: -1
+Hair
+  rotate: false
+  xy: 1516, 752
+  size: 339, 285
+  orig: 339, 285
+  offset: 0, 0
+  index: -1
+L-Apron
+  rotate: false
+  xy: 1209, 21
+  size: 116, 111
+  orig: 116, 111
+  offset: 0, 0
+  index: -1
+L-Arm
+  rotate: false
+  xy: 1623, 295
+  size: 138, 186
+  orig: 138, 186
+  offset: 0, 0
+  index: -1
+L-Ear
+  rotate: false
+  xy: 1783, 213
+  size: 66, 90
+  orig: 66, 90
+  offset: 0, 0
+  index: -1
+L-Earing
+  rotate: false
+  xy: 1783, 141
+  size: 71, 70
+  orig: 71, 70
+  offset: 0, 0
+  index: -1
+L-Eyebrow
+  rotate: false
+  xy: 1339, 380
+  size: 80, 30
+  orig: 80, 30
+  offset: 0, 0
+  index: -1
+L-Eyelid
+  rotate: false
+  xy: 1327, 8
+  size: 77, 53
+  orig: 77, 53
+  offset: 0, 0
+  index: -1
+L-Forearm
+  rotate: true
+  xy: 943, 38
+  size: 94, 142
+  orig: 94, 142
+  offset: 0, 0
+  index: -1
+L-Pupil
+  rotate: false
+  xy: 1406, 4
+  size: 58, 57
+  orig: 58, 57
+  offset: 0, 0
+  index: -1
+L-Shin
+  rotate: true
+  xy: 1617, 74
+  size: 98, 144
+  orig: 98, 144
+  offset: 0, 0
+  index: -1
+Mouth
+  rotate: true
+  xy: 943, 157
+  size: 114, 43
+  orig: 114, 43
+  offset: 0, 0
+  index: -1
+Nose
+  rotate: false
+  xy: 1087, 23
+  size: 120, 109
+  orig: 120, 109
+  offset: 0, 0
+  index: -1
+Pot
+  rotate: false
+  xy: 1466, 22
+  size: 56, 67
+  orig: 56, 67
+  offset: 0, 0
+  index: -1
+R-Apron
+  rotate: false
+  xy: 1465, 191
+  size: 156, 219
+  orig: 156, 219
+  offset: 0, 0
+  index: -1
+R-Arm
+  rotate: true
+  xy: 204, 25
+  size: 102, 193
+  orig: 102, 193
+  offset: 0, 0
+  index: -1
+R-Ear
+  rotate: true
+  xy: 458, 8
+  size: 42, 84
+  orig: 42, 84
+  offset: 0, 0
+  index: -1
+R-Earing
+  rotate: false
+  xy: 1763, 69
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+R-Eyebrow
+  rotate: true
+  xy: 604, 70
+  size: 57, 32
+  orig: 57, 32
+  offset: 0, 0
+  index: -1
+R-Eyelid
+  rotate: false
+  xy: 399, 2
+  size: 57, 48
+  orig: 57, 48
+  offset: 0, 0
+  index: -1
+R-Forearm1
+  rotate: false
+  xy: 1763, 305
+  size: 81, 176
+  orig: 81, 176
+  offset: 0, 0
+  index: -1
+R-Forearm2
+  rotate: true
+  xy: 1623, 174
+  size: 119, 158
+  orig: 119, 158
+  offset: 0, 0
+  index: -1
+R-Pupil
+  rotate: false
+  xy: 1524, 32
+  size: 58, 57
+  orig: 58, 57
+  offset: 0, 0
+  index: -1
+R-Shin
+  rotate: true
+  xy: 1465, 91
+  size: 98, 150
+  orig: 98, 150
+  offset: 0, 0
+  index: -1
+Thighs
+  rotate: false
+  xy: 644, 24
+  size: 297, 247
+  orig: 297, 247
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: false
+  xy: 1620, 483
+  size: 213, 267
+  orig: 213, 267
+  offset: 0, 0
+  index: -1
+hairBun
+  rotate: true
+  xy: 1252, 141
+  size: 229, 211
+  orig: 229, 211
+  offset: 0, 0
+  index: -1
+light-flare-portal
+  rotate: false
+  xy: 1014, 737
+  size: 500, 300
+  orig: 500, 300
+  offset: 0, 0
+  index: -1
+strike-effect
+  rotate: false
+  xy: 2, 129
+  size: 640, 142
+  orig: 640, 142
+  offset: 0, 0
+  index: -1
+sword
+  rotate: false
+  xy: 1014, 372
+  size: 323, 363
+  orig: 323, 363
+  offset: 0, 0
+  index: -1
+sword-glitter
+  rotate: false
+  xy: 544, 15
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+sword-glow
+  rotate: false
+  xy: 1014, 134
+  size: 236, 236
+  orig: 236, 236
+  offset: 0, 0
+  index: -1
+sword-slash
+  rotate: false
+  xy: 2, 273
+  size: 1010, 764
+  orig: 1010, 764
+  offset: 0, 0
+  index: -1
+waistKnot
+  rotate: false
+  xy: 1327, 63
+  size: 125, 76
+  orig: 125, 76
+  offset: 0, 0
+  index: -1

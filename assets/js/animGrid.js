@@ -65,6 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/img/sage.webp'
     },
     {
+      title: 'Samurai',
+      link: '',
+      type: 'spine-player',
+      spineData: {
+        width: '100%',
+        height: '500px',
+        jsonUrl: 'assets/spine/samurai.json',
+        atlasUrl: 'assets/spine/samurai.atlas',
+        animation: '04 damage',
+        backgroundColor: '#1f242d'
+      }
+    },
+    {
       title: 'Anubis',
       link: '',
       type: 'spine-player',
