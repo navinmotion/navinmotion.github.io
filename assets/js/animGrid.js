@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Character Skinning',
       link: 'https://navinkr.com/animation/project-2',
       type: 'image',
-      image: 'assets/img/sage.webp'
+      image: 'animation/project-2/TemplateData/Char-Skinning-Thumbnail.webp'
     },
     {
       title: 'Samurai',
