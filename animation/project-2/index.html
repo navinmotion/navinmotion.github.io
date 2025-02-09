@@ -1,188 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ2RYEKKDL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-PZ2RYEKKDL');
-  </script>
-  
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Project-2</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="/assets/img/logo-nk-favicon.webp" rel="icon">
-  <link href="/assets/img/logo-nk-touch-icon.webp" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-  <!-- Template Main CSS File -->
-  <link href="/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyPortfolio - v4.7.0
-  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Navbar ======= -->
-  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
-    <div class="container py-2 py-md-5">
-      <div class="row">
-        <div class="col-md-5 d-none d-md-block">
-          <h3>Hire Me</h3>
-          <p>Get a faster response by sending detailed information upfront.(e.g. client, budget, timeframe,
-            storyboard/sketches, NDA)<br><a href="mailto:navinkrworks@gmail.com">navinkrworks@gmail.com</a></p>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | Character Skinning</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
-        <div class="col-md-7">
-          <ul class="custom-menu">
-            <li><a href="/">Work</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-logo-title-footer"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Character Skinning</div>
       </div>
     </div>
-  </div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
 
-  <nav class="navbar navbar-light custom-navbar">
-    <div class="container">
-      <div class="navbar-brand">
-        <a href="/">
-          <img class="logo" src="/assets/img/logo-nk.webp"></a>
-      </div>
-      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
-        <span></span>
-      </a>
-    </div>
-  </nav>
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        var warningBanner = document.querySelector("#unity-warning");
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
 
-  <main id="main">
-    <!-- ======= Overview Section ======= -->
-    <section class="section pt-3 pb-3">
-      <div class="container">
-        <div class="row mb-4 align-items-center">
-          <div class="" data-aos="fade-up">
-            <h2>FlyingPCG</h2>
-          </div>
-        </div>
-      </div>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/webBuild.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/webBuild.data",
+        frameworkUrl: buildUrl + "/webBuild.framework.js",
+        codeUrl: buildUrl + "/webBuild.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Character Skinning",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
 
-      <div class="site-section pb-0">
-        <div class="container">
-          <div class="row align-items-stretch">
-            <div class="col-md-8" data-aos="fade-up">
-              <div class="video-container">
-                <iframe
-                  src="https://player.vimeo.com/video/961408879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                  width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="h3 heading">Credits</h3>
-              <div class="mb-3">
-                <strong>Assets & Illustrations:</strong>
-                <span>Primecraft Games</span>
-                <p></p>
-              </div>
-              <div class="mb-3">
-                <strong>Rigging & Animation:</strong>
-                <span>Navin Kumar</span>
-                <p></p>
-              </div>
-              <strong class="mb-3">Softwares:</strong>
-              <ul class="list-unstyled mb-5">
-                <li>Spine</li>
-                <li>After Effects</li>
-                <li>Premiere Pro</li>
-              </ul>
-              <!--p><a href="#" class="readmore">Visit Website</a></p-->
-            </div>
-          </div>
-        </div>
-    </section><!-- End Overview Section -->
+      // By default, Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
 
-    <!-- ======= Brief Concept Section ======= -->
-    <section class="section pt-3 pb-3">
-      <div class="container" data-aos="fade-up">
-        <div class="row align-items-end">
-          <h3 class="h3 heading">Brief / Concept</h3>
-          <p>I created this treasure box logo animation as part of a challenge organized by Primecraft Games.
-            It was a really fun time with lots of learning. I used Spine software for the treasure box animation,
-            After Effects for the particles, and Premiere Pro for editing.</p>
-        </div>
-      </div>
-    </section><!-- End Brief Concept Section -->
+      // If you would like all file writes inside Unity Application.persistentDataPath
+      // directory to automatically persist so that the contents are remembered when
+      // the user revisits the site the next time, uncomment the following line:
+      // config.autoSyncPersistentDataPath = true;
+      // This autosyncing is currently not the default behavior to avoid regressing
+      // existing user projects that might rely on the earlier manual
+      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
+      // expected to change.
 
-    <!-- ======= Previous/Next Section ======= -->
-    <div class="container py-2 py-md-5">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="align-left">
-            <a href="../project-1" class="previous round"><i class='bx bxs-chevron-left'></i></a>
-          </div>
-          <div class="align-right">
-            <a href="../project-3" class="next round"><i class='bx bxs-chevron-right'></i></a>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Previous/Next Section -->
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
 
-  </main><!-- End #main -->
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        document.querySelector("#unity-container").className = "unity-mobile";
+        canvas.className = "unity-mobile";
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 social">
-          <a href="https://www.behance.net/navin-kumar" target="_blank"><span class="bi bi-behance"></span></a>
-          <a href="https://dribbble.com/navinmotion" target="_blank"><span class="bi bi-dribbble"></span></a>
-          <a href="https://www.instagram.com/navinmotion" target="_blank"><span class="bi bi-instagram"></span></a>
-          <a href="https://www.linkedin.com/in/navinkrprasad" target="_blank"><span class="bi bi-linkedin"></span></a>
-          <a href="https://vimeo.com/navinmotion" target="_blank"><span class="bi bi-vimeo"></span></a>
-        </div>
-        <div class="">
-          <p class="mb-1">&copy; Navin Kumar. All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="/assets/vendor/aos/aos.js"></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/assets/vendor/php-email-form/validate.js"></script>
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
 
-  <!-- Template Main JS File -->
-  <script src="/assets/js/main.js"></script>
+      document.querySelector("#unity-loading-bar").style.display = "block";
 
-</body>
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+              }).then((unityInstance) => {
+                document.querySelector("#unity-loading-bar").style.display = "none";
+                document.querySelector("#unity-fullscreen-button").onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
 
+              }).catch((message) => {
+                alert(message);
+              });
+            };
+
+      document.body.appendChild(script);
+
+    </script>
+  </body>
 </html>
