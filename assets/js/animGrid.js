@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Character Skinning',
-      link: 'assets/unity',
+      link: 'https://navinkr.com/assets/unity',
       type: 'image',
       image: 'assets/img/sage.webp'
     },
