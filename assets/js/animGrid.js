@@ -68,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'assets/img/Thumbnails/Char-Skinning.webp'
     },
     {
+      title: 'Unity VFX',
+      link: 'https://navinkr.com/animation/project-3',
+      type: 'image',
+      image: 'assets/img/Thumbnails/Unity-Vfx-Thumbnail.webp'
+    },
+    {
       title: 'Samurai',
       link: '',
       type: 'spine-player',
