@@ -48,8 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-
-
   // Check if container exists
   if (!container) {
     console.error('Container not found: .container_grid_animation');
@@ -61,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Sage Welcome Ux/Ui',
       link: 'animation/project-1',
       type: 'image',
-      image: 'assets/img/sage.webp'
+      image: 'assets/img/Thumbnails/sage.webp'
     },
     {
       title: 'Character Skinning',
       link: 'https://navinkr.com/animation/project-2',
       type: 'image',
-      image: 'animation/project-2/TemplateData/Char-Skinning-Thumbnail.webp'
+      image: 'assets/img/Thumbnails/Char-Skinning.webp'
     },
     {
       title: 'Samurai',
@@ -170,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'FlyingPCG',
       link: 'animation/project-5',
       type: 'image',
-      image: 'assets/img/primecraft.webp'
+      image: 'assets/img/Thumbnails/primecraft.webp'
     },
   ];
 

@@ -2,18 +2,28 @@
 <html lang="en-us">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ2RYEKKDL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-PZ2RYEKKDL');
+  </script>
+
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Project-2 | Character Skinning</title>
   <!-- Favicons -->
   <link href="/assets/img/logo-nk-favicon.webp" rel="icon">
   <link href="/assets/img/logo-nk-touch-icon.webp" rel="apple-touch-icon">
-  <link rel="stylesheet" href="TemplateData/style.css">
+  <link rel="stylesheet" href="/assets/unity/TemplateData/style.css">
 </head>
 
 <body>
   <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <canvas id="unity-canvas" width=960 height=540 tabindex="-1"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
@@ -55,13 +65,13 @@
       updateBannerVisibility();
     }
 
-    var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/webBuild.loader.js";
+    var buildUrl = "assets/unity/Ch-Skinning";
+    var loaderUrl = buildUrl + "/chSkinning.loader.js";
     var config = {
       arguments: [],
-      dataUrl: buildUrl + "/webBuild.data",
-      frameworkUrl: buildUrl + "/webBuild.framework.js",
-      codeUrl: buildUrl + "/webBuild.wasm",
+      dataUrl: buildUrl + "/chSkinning.data",
+      frameworkUrl: buildUrl + "/chSkinning.framework.js",
+      codeUrl: buildUrl + "/chSkinning.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "Character Skinning",
@@ -103,7 +113,7 @@
     } else {
       // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
       canvas.style.width = "960px";
-      canvas.style.height = "600px";
+      canvas.style.height = "540px";
     }
 
     document.querySelector("#unity-loading-bar").style.display = "block";
