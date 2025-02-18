@@ -100,10 +100,10 @@
             <div id="unity-footer">
               <div id="unity-logo-title-footer"></div>
               <div id="unity-right-footer">
-                  <div id="unity-build-title">Portal Spawner</div>
-                  <div id="unity-fullscreen-button"></div>
+                <div id="unity-build-title">Portal Spawner</div>
+                <div id="unity-fullscreen-button"></div>
               </div>
-          </div>          
+            </div>
             <script>
               var canvas = document.querySelector("#unity-canvas");
 
@@ -169,8 +169,8 @@
                 meta.name = 'viewport';
                 meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
                 document.getElementsByTagName('head')[0].appendChild(meta);
-                document.querySelector("#unity-container").className = "unity-mobile";
-                canvas.className = "unity-mobile";
+                document.querySelector("#unity-container").classList.add("unity-mobile");
+                document.querySelector("#unity-canvas").classList.add("unity-mobile");
 
                 // To lower canvas resolution on mobile devices to gain some
                 // performance, uncomment the following line:
@@ -208,7 +208,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- ======= Previous/Next Section ======= -->
     <div class="container py-2 py-md-5">
       <div class="row">
