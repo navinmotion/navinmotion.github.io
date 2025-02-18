@@ -7,7 +7,7 @@
     transform: none;
 }
 
-#unity-container.unity-desktop {
+.unity-desktop #unity-container{
     left: auto; 
     top: auto;
     transform: none;
@@ -17,14 +17,16 @@
     align-items: center;
 }
 
-#unity-container.unity-mobile {
+.unity-mobile #unity-container {
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    display: block;
+    width: 100%;
+    height: 100vh; /* Use full viewport height */
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #unity-canvas {
@@ -39,7 +41,7 @@
 .unity-mobile #unity-canvas {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Adjust as needed */
+    object-fit: contain; /* This ensures the aspect ratio is preserved */
 }
 
 #unity-loading-bar {
@@ -81,8 +83,12 @@
     justify-content: space-between;
 }
 
-.unity-mobile #unity-footer {
-    display: none;
+.unity-mobile #unity-footer,
+.unity-mobile #unity-logo-title-footer,
+.unity-mobile #unity-right-footer,
+.unity-mobile #unity-build-title,
+.unity-mobile #unity-fullscreen-button {
+    display: none !important;
 }
 
 #unity-logo-title-footer {
