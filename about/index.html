@@ -141,6 +141,11 @@
               <h4>Post Office Studios</h4>
             </a>
           </div>
+          <div class="col-6 col-sm-4 col-md-2 mb-3">
+            <a href="#" class="client-logo">
+              <h4>Dashtoon Studio</h4>
+            </a>
+          </div>
         </div>
       </div>
     </section><!-- End Clients Section -->
@@ -154,24 +159,24 @@
             <p>Don't hesitate to reach out. Got a question? Have a fun project or just want to say hello? Well, you've
               come to right place my friend!</p>
 
-            <form action="../forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="contactForm" action="api/contact" method="post" role="form" class="php-email-form">
 
               <div class="row gy-3">
                 <div class="col-md-6 form-group">
                   <label for="name">Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
                 </div>
                 <div class="col-md-6 form-group">
                   <label for="name">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
                 </div>
                 <div class="col-md-12 form-group">
                   <label for="name">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject" required>
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter your subject" required>
                 </div>
                 <div class="col-md-12 form-group">
                   <label for="name">Message</label>
-                  <textarea class="form-control" name="message" cols="30" rows="10" required></textarea>
+                  <textarea type="text" class="form-control" name="message" cols="30" rows="10" placeholder="Type your message..." required></textarea>
                 </div>
 
                 <div class="col-md-12 my-3">
@@ -186,6 +191,38 @@
               </div>
 
             </form>
+
+            <script>
+              document.getElementById("contactForm").addEventListener("submit", async function (event) {
+                  event.preventDefault();
+              
+                  const formData = new FormData(this);
+                  const formObject = {};
+                  formData.forEach((value, key) => formObject[key] = value);
+              
+                  try {
+                      const response = await fetch("/api/contact", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(formObject)
+                      });
+              
+                      const data = await response.json();
+              
+                      if (response.ok) {
+                          alert("✅ Success! Your message has been sent.");
+                          this.reset();
+                      } 
+                      else {
+                          alert("❌ Error! " + data.message);
+                      }
+                  } 
+                  catch (error) {
+                      alert("❌ Error! Failed to submit the form. Try again later.");
+                  }
+              });
+              </script>
+              
           </div>
 
           <div class="col-md-6 mb-5" data-aos="fade-up">
@@ -264,11 +301,11 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Final Cut Pro &nbsp</strong>
+                  <strong>Unity &nbsp</strong>
                   <!-- <span class="ml-auto">80%</span> -->
                 </div>
                 <div class="progress custom-progress">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                  <div class="progress-bar" role="progressbar" style="width: 71%" aria-valuenow="71" aria-valuemin="0"
                     aria-valuemax="100"></div>
                 </div>
               </li>
