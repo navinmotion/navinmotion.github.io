@@ -56,24 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const posts = [
     {
-      title: 'Sage Welcome Ux/Ui',
-      link: 'animation/project-1',
-      type: 'image',
-      image: 'assets/img/Thumbnails/sage.webp'
-    },
-    {
-      title: 'Character Skinning',
-      link: 'https://navinkr.com/animation/project-2',
-      type: 'image',
-      image: 'assets/img/Thumbnails/Char-Skinning.webp'
-    },
-    {
-      title: 'Unity VFX',
-      link: 'https://navinkr.com/animation/project-3',
-      type: 'image',
-      image: 'assets/img/Thumbnails/Unity-Vfx-Thumbnail.webp'
-    },
-    {
       title: 'Samurai',
       link: '',
       type: 'spine-player',

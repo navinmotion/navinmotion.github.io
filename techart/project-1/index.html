@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Project-5</title>
+  <title>Project-1</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -85,7 +85,12 @@
       <div class="container">
         <div class="row mb-4 align-items-center">
           <div class="" data-aos="fade-up">
-            <h2>FlyingPCG</h2>
+            <h2 class="head_animation">Sage Welcome Ux/Ui</h2>
+            <h4>Rive - The era of Runtime Design</h4>
+            <p>Rive is designed for the world of runtime. Runtime is the period of time during which a program is
+              running. This tools help us to create interactive graphics using the new format. These tools empower
+              designers and animators to think more like devs. At the same time, they free up engineering resources, not
+              requiring a dev to be involved in every design iteration.</p>
           </div>
         </div>
       </div>
@@ -94,17 +99,24 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-8" data-aos="fade-up">
-              <div class="video-container">
-                <iframe
-                  src="https://player.vimeo.com/video/961408879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                  width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+              <div class="rive_canvas">
+                <canvas id="canvas" width="640" height="564"></canvas>
               </div>
+              <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+              <script>
+                const r = new rive.Rive({
+                  src: "/assets/rive/sage.riv",
+                  canvas: document.getElementById("canvas"),
+                  autoplay: true,
+                  stateMachines: "sageState",
+                });
+              </script>
             </div>
             <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="h3 heading">Credits</h3>
+              <h3 class="h3 heading_rive">Credits</h3>
               <div class="mb-3">
                 <strong>Assets & Illustrations:</strong>
-                <span>Primecraft Games</span>
+                <span>Stock websites (Under CCL)</span>
                 <p></p>
               </div>
               <div class="mb-3">
@@ -112,11 +124,9 @@
                 <span>Navin Kumar</span>
                 <p></p>
               </div>
-              <strong class="mb-3">Softwares:</strong>
+              <strong class="mb-3">Software:</strong>
               <ul class="list-unstyled mb-5">
-                <li>Spine</li>
-                <li>After Effects</li>
-                <li>Premiere Pro</li>
+                <li>Rive</li>
               </ul>
               <!--p><a href="#" class="readmore">Visit Website</a></p-->
             </div>
@@ -129,9 +139,12 @@
       <div class="container" data-aos="fade-up">
         <div class="row align-items-end">
           <h3 class="h3 heading">Brief / Concept</h3>
-          <p>I created this treasure box logo animation as part of a challenge organized by Primecraft Games.
-            It was a really fun time with lots of learning. I used Spine software for the treasure box animation,
-            After Effects for the particles, and Premiere Pro for editing.</p>
+          <img src="/assets/img/sage-demo.gif" alt="Sage Demo GIF" class="gif">
+
+          <p>In the above project, the software that will ultimately load this file doesn’t
+            need to know anything about the design, shapes, or the sequence the animations
+            need to play in. It just tells the Rive graphic that an area was hovered; the visual
+            state machine controls the rest.</p>
         </div>
       </div>
     </section><!-- End Brief Concept Section -->
@@ -144,7 +157,7 @@
             <a href="#" class="previous round"><i class='bx bxs-chevron-left'></i></a>
           </div>
           <div class="align-right">
-            <a href="#" class="next round"><i class='bx bxs-chevron-right'></i></a>
+            <a href="../project-2" class="next round"><i class='bx bxs-chevron-right'></i></a>
           </div>
         </div>
       </div>
