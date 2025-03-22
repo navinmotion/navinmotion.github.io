@@ -772,7 +772,7 @@ h6,
   padding: 14px 16px;
   font-size: 1.1rem;
   font-weight: 500px;
-  width: 33.33%;
+  width: 25%;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -802,9 +802,24 @@ h6,
   }
 
   .box {
-    margin-left: -12px;
-    margin-right: -12px;
-    margin-bottom: -60px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .box button {
+    font-size: 0.9rem;
+    min-width: 90px;
+    max-width: 140px;
+    padding: 8px;
+  }
+
+  .box .text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 60px;
+    display: inline-block;
   }
 }
 
@@ -815,12 +830,16 @@ h6,
 }
 
 
-#defaultOpen {
+#design_tab{
   border-left: 2px solid white;
   border-right: 2px solid white;
 }
 
 #AI {
+  background-color: #323946;
+}
+
+#TechArt {
   background-color: #323946;
 }
 
@@ -849,8 +868,10 @@ h6,
 
 .box button {
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 
 .list-unstyled li::before {

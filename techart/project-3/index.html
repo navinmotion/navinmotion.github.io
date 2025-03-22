@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ2RYEKKDL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-PZ2RYEKKDL');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Project-3 | Unity-Vfx</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/logo-nk-favicon.webp" rel="icon">
+  <link href="/assets/img/logo-nk-touch-icon.webp" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/unity/TemplateData/style.css">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.7.0
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row">
+        <div class="col-md-5 d-none d-md-block">
+          <h3>Hire Me</h3>
+          <p>Get a faster response by sending detailed information upfront.(e.g. client, budget, timeframe,
+            storyboard/sketches, NDA)<br><a href="mailto:navinkrworks@gmail.com">navinkrworks@gmail.com</a></p>
+        </div>
+        <div class="col-md-7">
+          <ul class="custom-menu">
+            <li><a href="/">Work</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="/">
+          <img class="logo" src="/assets/img/logo-nk.webp"></a>
+      </div>
+      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section pt-3 pb-3">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="" data-aos="fade-up">
+            <div id="unity-container" class="unity-desktop">
+              <canvas id="unity-canvas" width=960 height=540 tabindex="-1"></canvas>
+              <div id="unity-loading-bar">
+                <div id="unity-logo"></div>
+                <div id="unity-progress-bar-empty">
+                  <div id="unity-progress-bar-full"></div>
+                </div>
+              </div>
+              <div id="unity-warning"></div>
+            </div>
+
+            <!-- Place footer BELOW Unity container -->
+            <div id="unity-footer">
+              <div id="unity-logo-title-footer"></div>
+              <div id="unity-right-footer">
+                <div id="unity-build-title">Portal Spawner</div>
+                <div id="unity-fullscreen-button"></div>
+              </div>
+            </div>
+            <script>
+              var canvas = document.querySelector("#unity-canvas");
+
+              // Shows a temporary message banner/ribbon for a few seconds, or
+              // a permanent error message on top of the canvas if type=='error'.
+              // If type=='warning', a yellow highlight color is used.
+              // Modify or remove this function to customize the visually presented
+              // way that non-critical warnings and error messages are presented to the
+              // user.
+              function unityShowBanner(msg, type) {
+                var warningBanner = document.querySelector("#unity-warning");
+                function updateBannerVisibility() {
+                  warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+                }
+                var div = document.createElement('div');
+                div.innerHTML = msg;
+                warningBanner.appendChild(div);
+                if (type == 'error') div.style = 'background: red; padding: 10px;';
+                else {
+                  if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                  setTimeout(function () {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                  }, 5000);
+                }
+                updateBannerVisibility();
+              }
+
+              var buildUrl = "/assets/unity/Portal-Spawner";
+              var loaderUrl = buildUrl + "/portalSpawner.loader.js";
+              var config = {
+                arguments: [],
+                dataUrl: buildUrl + "/portalSpawner.data",
+                frameworkUrl: buildUrl + "/portalSpawner.framework.js",
+                codeUrl: buildUrl + "/portalSpawner.wasm",
+                streamingAssetsUrl: "StreamingAssets",
+                companyName: "DefaultCompany",
+                productName: "Portal Spawner",
+                productVersion: "1.0",
+                showBanner: unityShowBanner,
+              };
+
+              // By default, Unity keeps WebGL canvas render target size matched with
+              // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+              // Set this to false if you want to decouple this synchronization from
+              // happening inside the engine, and you would instead like to size up
+              // the canvas DOM size and WebGL render target sizes yourself.
+              // config.matchWebGLToCanvasSize = false;
+
+              // If you would like all file writes inside Unity Application.persistentDataPath
+              // directory to automatically persist so that the contents are remembered when
+              // the user revisits the site the next time, uncomment the following line:
+              // config.autoSyncPersistentDataPath = true;
+              // This autosyncing is currently not the default behavior to avoid regressing
+              // existing user projects that might rely on the earlier manual
+              // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
+              // expected to change.
+
+              if (/iPhone|Android/i.test(navigator.userAgent)) {
+                // Mobile device style: fill the whole browser client area with the game canvas
+                var meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+                document.getElementsByTagName('head')[0].appendChild(meta);
+                document.querySelector("#unity-container").classList.add("unity-mobile");
+                document.querySelector("#unity-canvas").classList.add("unity-mobile");
+
+                // Set the canvas aspect ratio to 4:5 for mobile devices
+                var aspectRatioMobile = 4 / 5;
+                var windowWidth = window.innerWidth;
+                var windowHeight = window.innerHeight;
+
+                // Adjust the canvas size to maintain the aspect ratio
+                if (windowWidth / windowHeight < aspectRatioMobile) {
+                  document.querySelector("#unity-canvas").style.width = windowWidth + 'px';
+                  document.querySelector("#unity-canvas").style.height = (windowWidth * aspectRatioMobile) + 'px';
+                } else {
+                  document.querySelector("#unity-canvas").style.height = windowHeight + 'px';
+                  document.querySelector("#unity-canvas").style.width = (windowHeight * (1 / aspectRatioMobile)) + 'px';
+                }
+
+              } else {
+                // Desktop or iPad style: Keep aspect ratio of 9:16
+                var aspectRatioDesktop = 9 / 16;
+                canvas.style.width = "960px";
+                canvas.style.height = (960 * aspectRatioDesktop) + "px";
+              }
+
+
+              document.querySelector("#unity-loading-bar").style.display = "block";
+
+              var script = document.createElement("script");
+              script.src = loaderUrl;
+              script.onload = () => {
+                createUnityInstance(canvas, config, (progress) => {
+                  document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+                }).then((unityInstance) => {
+                  document.querySelector("#unity-loading-bar").style.display = "none";
+                  document.querySelector("#unity-fullscreen-button").onclick = () => {
+                    unityInstance.SetFullscreen(1);
+                  };
+
+                }).catch((message) => {
+                  alert(message);
+                });
+              };
+
+              document.body.appendChild(script);
+
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Previous/Next Section ======= -->
+    <div class="container py-2 py-md-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="align-left">
+            <a href="../project-2" class="previous round"><i class='bx bxs-chevron-left'></i></a>
+          </div>
+          <div class="align-right">
+            <a href="#" class="next round"><i class='bx bxs-chevron-right'></i></a>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Previous/Next Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 social">
+          <a href="https://www.behance.net/navin-kumar" target="_blank"><span class="bi bi-behance"></span></a>
+          <a href="https://dribbble.com/navinmotion" target="_blank"><span class="bi bi-dribbble"></span></a>
+          <a href="https://www.instagram.com/navinmotion" target="_blank"><span class="bi bi-instagram"></span></a>
+          <a href="https://www.linkedin.com/in/navinkrprasad" target="_blank"><span class="bi bi-linkedin"></span></a>
+          <a href="https://vimeo.com/navinmotion" target="_blank"><span class="bi bi-vimeo"></span></a>
+        </div>
+        <div class="">
+          <p class="mb-1">&copy; Navin Kumar. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
