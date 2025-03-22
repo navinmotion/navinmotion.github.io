@@ -138,12 +138,12 @@
           </div>
           <div class="col-6 col-sm-4 col-md-2 mb-3">
             <a href="#" class="client-logo">
-              <h4>Post Office Studios</h4>
+              <h4>Isha Foundation</h4>
             </a>
           </div>
           <div class="col-6 col-sm-4 col-md-2 mb-3">
             <a href="#" class="client-logo">
-              <h4>Isha Foundation</h4>
+              <h4>Post Office Studios</h4>
             </a>
           </div>
         </div>
@@ -201,7 +201,7 @@
                   formData.forEach((value, key) => formObject[key] = value);
               
                   try {
-                      const response = await fetch("/api/contact", {
+                      const response = await fetch("https://launchpadnetworkx.vercel.app//api/contact_navin", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify(formObject)
