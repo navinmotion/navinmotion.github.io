@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
@@ -12,7 +12,9 @@ export default async function handler(req, res) {
     }
 
     const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
         auth: {
             user: "navinkrworks@gmail.com",
             pass: "irdixikwflbdplho"
@@ -20,15 +22,10 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-        from: email,
+        from: `"${name}" <${email}>`,
         to: "navinkrworks@gmail.com",
-        subject: "🚀 New Project Inquiry from Website",
-        text: `
-            📛 Name: ${name}
-            📧 Email: ${email}
-            📞 Subject: ${subject}
-            📝 Message: ${message}
-        `
+        subject: `🚀 New Inquiry: ${subject}`,
+        text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`
     };
 
     try {
