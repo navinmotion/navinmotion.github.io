@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.1.0",
+  "description": "Freelance website",
+  "main": "index.html",
+  "scripts": {
+    "test": "hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navinmotion/navinmotion.github.io.git"
+  },
+  "keywords": [
+    "animation"
+  ],
+  "author": "Navin Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/navinmotion/navinmotion.github.io/issues"
+  },
+  "homepage": "https://github.com/navinmotion/navinmotion.github.io#readme",
+  "dependencies": {
+    "nodemailer": "^6.10.0"
+  }
+}
