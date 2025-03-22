@@ -807,12 +807,12 @@ h6,
     overflow: hidden;
   }
 
-  .box button {
+  /* .box button {
     font-size: 0.9rem;
     min-width: 90px;
     max-width: 140px;
     padding: 8px;
-  }
+  } */
 
   .box .text {
     overflow: hidden;
