@@ -201,7 +201,7 @@
                   formData.forEach((value, key) => formObject[key] = value);
               
                   try {
-                      const response = await fetch("https://launchpadnetworkx.vercel.app//api/contact_navin", {
+                      const response = await fetch("https://launchpadnetworkx.vercel.app/api/contact_navin", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify(formObject)
