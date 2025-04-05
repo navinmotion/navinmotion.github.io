@@ -56,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const posts = [
       {
-        title: 'Sage Welcome Ux/Ui',
-        link: 'techart/project-1',
-        type: 'image',
-        image: 'assets/img/Thumbnails/sage.webp'
-      },
-      {
         title: 'Character Skinning',
         link: 'https://navinkr.com/techart/project-2',
         type: 'image',
@@ -72,6 +66,30 @@ document.addEventListener('DOMContentLoaded', () => {
         link: 'https://navinkr.com/techart/project-3',
         type: 'image',
         image: 'assets/img/Thumbnails/Unity-Vfx-Thumbnail.webp'
+      },
+      {
+        title: 'WaterShader',
+        link: 'techart/project-5',
+        type: 'image',
+        image: 'assets/img/Thumbnails/waterShader.webp'
+      },
+      {
+        title: 'WaterShader',
+        link: 'techart/project-5',
+        type: 'image',
+        image: ''
+      },
+      {
+        title: 'Responsive UI (Unity)',
+        link: 'techart/project-4',
+        type: 'image',
+        image: 'assets/img/Thumbnails/responsive.webp'
+      },
+      {
+        title: 'Sage Welcome Ux/Ui',
+        link: 'techart/project-1',
+        type: 'image',
+        image: 'assets/img/Thumbnails/sage.webp'
       },
     ];
   

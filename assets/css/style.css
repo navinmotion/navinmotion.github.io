@@ -230,6 +230,10 @@ h6,
   font-size: 28px;
 }
 
+.heading1{
+  margin-top: 30px;
+}
+
 .readmore {
   display: inline-block;
   border: 1px solid #000;
@@ -333,6 +337,28 @@ h6,
 .align-right {
   float: right;
 }
+
+.video-container1 {
+  display: flex;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+  max-width: 100%;
+}
+
+.video-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.video-title {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: white;
+}
+
 
 .video-container {
   position: relative;
@@ -466,7 +492,7 @@ h6,
 
 @media (max-width: 768px) {
   .head_animation {
-      font-size: 8.5vw !important;
+      font-size: 7.5vw !important;
   }
 }
 
