@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Project-1 | Character Skinning</title>
+  <title>Project-2 | Unity-Vfx</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -100,7 +100,7 @@
             <div id="unity-footer">
               <div id="unity-logo-title-footer"></div>
               <div id="unity-right-footer">
-                <div id="unity-build-title">Character Skinning</div>
+                <div id="unity-build-title">Portal Spawner</div>
                 <div id="unity-fullscreen-button"></div>
               </div>
             </div>
@@ -132,16 +132,16 @@
                 updateBannerVisibility();
               }
 
-              var buildUrl = "/assets/unity/Ch-Skinning";
-              var loaderUrl = buildUrl + "/chSkinning.loader.js";
+              var buildUrl = "/assets/unity/Portal-Spawner";
+              var loaderUrl = buildUrl + "/portalSpawner.loader.js";
               var config = {
                 arguments: [],
-                dataUrl: buildUrl + "/chSkinning.data",
-                frameworkUrl: buildUrl + "/chSkinning.framework.js",
-                codeUrl: buildUrl + "/chSkinning.wasm",
+                dataUrl: buildUrl + "/portalSpawner.data",
+                frameworkUrl: buildUrl + "/portalSpawner.framework.js",
+                codeUrl: buildUrl + "/portalSpawner.wasm",
                 streamingAssetsUrl: "StreamingAssets",
                 companyName: "DefaultCompany",
-                productName: "Character Skinning",
+                productName: "Portal Spawner",
                 productVersion: "1.0",
                 showBanner: unityShowBanner,
               };
@@ -162,26 +162,36 @@
               // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
               // expected to change.
 
-              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                // Mobile device style: fill the whole browser client area with the game canvas:
-
+              if (/iPhone|Android/i.test(navigator.userAgent)) {
+                // Mobile device style: fill the whole browser client area with the game canvas
                 var meta = document.createElement('meta');
                 meta.name = 'viewport';
                 meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
                 document.getElementsByTagName('head')[0].appendChild(meta);
-                document.querySelector("#unity-container").className = "unity-mobile";
-                canvas.className = "unity-mobile";
+                document.querySelector("#unity-container").classList.add("unity-mobile");
+                document.querySelector("#unity-canvas").classList.add("unity-mobile");
 
-                // To lower canvas resolution on mobile devices to gain some
-                // performance, uncomment the following line:
-                // config.devicePixelRatio = 1;
+                // Set the canvas aspect ratio to 4:5 for mobile devices
+                var aspectRatioMobile = 4 / 5;
+                var windowWidth = window.innerWidth;
+                var windowHeight = window.innerHeight;
 
+                // Adjust the canvas size to maintain the aspect ratio
+                if (windowWidth / windowHeight < aspectRatioMobile) {
+                  document.querySelector("#unity-canvas").style.width = windowWidth + 'px';
+                  document.querySelector("#unity-canvas").style.height = (windowWidth * aspectRatioMobile) + 'px';
+                } else {
+                  document.querySelector("#unity-canvas").style.height = windowHeight + 'px';
+                  document.querySelector("#unity-canvas").style.width = (windowHeight * (1 / aspectRatioMobile)) + 'px';
+                }
 
               } else {
-                // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+                // Desktop or iPad style: Keep aspect ratio of 9:16
+                var aspectRatioDesktop = 9 / 16;
                 canvas.style.width = "960px";
-                canvas.style.height = "540px";
+                canvas.style.height = (960 * aspectRatioDesktop) + "px";
               }
+
 
               document.querySelector("#unity-loading-bar").style.display = "block";
 
@@ -208,7 +218,7 @@
         </div>
       </div>
     </section>
-
+    
     <section class="section pt-3 pb-3">
       <div class="container" data-aos="fade-up">
         <div class="row align-items-end">
@@ -216,27 +226,27 @@
     
           <div class="col-md-8" data-aos="fade-up">
             <div class="video-container2">
-              <img class="w-100" src="/assets/img/Thumbnails/character1.webp" alt="character1">
-              <!-- <p class="video-title">Water Flow (Shader Graph)</p> -->
+              <img class="w-100" src="/assets/img/Thumbnails/portal-spawner.webp" alt="Unity Vfx">
+              <p class="video-title">Portal Spawner (Custom Menu)</p>
             </div>
           </div>
     
-          <div class="col-md-8" data-aos="fade-up">
+          <!-- <div class="col-md-8" data-aos="fade-up">
             <div class="video-container2">
               <img class="w-100" src="/assets/img/Thumbnails/character2.webp" alt="character1">
-              <!-- <p class="video-title">God Rays (Particle System)</p> -->
-            </div>
+              <p class="video-title">God Rays (Particle System)</p>
+            </div> -->
           </div>
         </div>
       </div>
-    </section>    
+    </section>
 
     <!-- ======= Previous/Next Section ======= -->
     <div class="container py-2 py-md-5">
       <div class="row">
         <div class="col-md-12">
           <div class="align-left">
-            <a href="#" class="previous round"><i class='bx bxs-chevron-left'></i></a>
+            <a href="../project-1" class="previous round"><i class='bx bxs-chevron-left'></i></a>
           </div>
           <div class="align-right">
             <a href="../project-3" class="next round"><i class='bx bxs-chevron-right'></i></a>
