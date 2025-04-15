@@ -341,7 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
               showControls: true,
               premultipliedAlpha: true,
               alpha: true,
-              defaultMix: 1
+              defaultMix: 1,
+              viewport: {
+                disableInput: true // disables canvas touch/gesture input only
+              }
             });
           });
 
