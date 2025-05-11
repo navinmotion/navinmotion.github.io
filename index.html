@@ -36,10 +36,8 @@
   <link href="assets/img/logo-nk-favicon.webp" rel="icon">
   <link href="assets/img/logo-nk-touch-icon.webp" rel="apple-touch-icon">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <!-- Google Fonts: Only Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -60,6 +58,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="assets/img/Thumbnails/Reel Thumbnail.webp" imagesrcset="assets/img/Thumbnails/Reel Thumbnail.webp 1200w" imagesizes="100vw">
 </head>
 
 <body>
@@ -119,7 +120,6 @@
                   <!-- <span>2022</span> -->
                 </div>
                 <img class="img-fluid" src="assets/img/Thumbnails/Reel Thumbnail.webp" 
-                     loading="lazy" 
                      width="1200" 
                      height="675"
                      alt="Demo Reel Thumbnail">
@@ -441,15 +441,15 @@
   </script>
 
   <!-- Vendor JS Files -->
-  <script src="assets/js/spine-player.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/spine-player.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 
