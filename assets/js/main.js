@@ -282,3 +282,80 @@ function copyText(contentId, copyImageClass, tickImageClass) {
 
 
 // Changes mades
+
+// Initialize AOS with optimized settings
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize AOS with optimized settings
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+    disable: 'mobile'
+  });
+
+  // Handle loader
+  const loader = document.getElementById('loader');
+  const mainContent = document.getElementById('main-content');
+
+  // Hide loader and show main content when page is loaded
+  window.addEventListener('load', function() {
+    loader.style.display = 'none';
+    mainContent.style.display = 'block';
+  });
+
+  // Lazy load images
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    lazyImages.forEach(img => {
+      img.src = img.dataset.src;
+    });
+  } else {
+    // Fallback for browsers that don't support native lazy loading
+    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(img => {
+      lazyLoadObserver.observe(img);
+    });
+  }
+
+  // Optimize tab switching
+  const tabLinks = document.querySelectorAll('.tablink');
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const tabId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+      openPage(tabId, this, '#323946');
+    });
+  });
+});
+
+// Optimized tab switching function
+function openPage(pageName, elmnt, color) {
+  const tabcontent = document.getElementsByClassName('tabcontent');
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
+
+  const tablinks = document.getElementsByClassName('tablink');
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = '';
+  }
+
+  document.getElementById(pageName).style.display = 'block';
+  elmnt.style.backgroundColor = color;
+}
+
+// Initialize default tab
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('defaultOpen').click();
+});
