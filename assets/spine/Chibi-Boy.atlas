@@ -1,180 +1,180 @@
 
 Chibi-Boy.png
-size: 579,142
+size: 1024,128
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 BckHair
   rotate: false
-  xy: 239, 2
+  xy: 557, 90
   size: 45, 36
   orig: 45, 36
   offset: 0, 0
   index: -1
 Face
   rotate: false
-  xy: 375, 44
+  xy: 651, 30
   size: 74, 96
   orig: 74, 96
   offset: 0, 0
   index: -1
 Hair
-  rotate: true
-  xy: 226, 40
+  rotate: false
+  xy: 286, 59
   size: 100, 67
   orig: 100, 67
   offset: 0, 0
   index: -1
 L-Arm
-  rotate: false
-  xy: 295, 42
+  rotate: true
+  xy: 2, 16
   size: 38, 98
   orig: 38, 98
   offset: 0, 0
   index: -1
 L-Calf
-  rotate: false
-  xy: 451, 49
+  rotate: true
+  xy: 388, 91
   size: 35, 91
   orig: 35, 91
   offset: 0, 0
   index: -1
 L-Cheek
   rotate: false
-  xy: 569, 8
+  xy: 83, 5
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
   index: -1
 L-Eye
-  rotate: true
-  xy: 180, 2
+  rotate: false
+  xy: 93, 3
   size: 5, 11
   orig: 5, 11
   offset: 0, 0
   index: -1
 L-Eyebrow
-  rotate: true
-  xy: 513, 3
+  rotate: false
+  xy: 23, 4
   size: 14, 10
   orig: 14, 10
   offset: 0, 0
   index: -1
 L-Forearm
   rotate: true
-  xy: 380, 2
+  xy: 292, 17
   size: 40, 88
   orig: 40, 88
   offset: 0, 0
   index: -1
 L-Shoe
   rotate: false
-  xy: 513, 19
+  xy: 476, 28
   size: 64, 31
   orig: 64, 31
   offset: 0, 0
   index: -1
 L-Thigh
-  rotate: false
-  xy: 2, 6
-  size: 70, 134
+  rotate: true
+  xy: 2, 56
+  size: 70, 140
   orig: 70, 140
-  offset: 0, 2
+  offset: 0, 0
   index: -1
 Mouth
-  rotate: true
-  xy: 531, 59
+  rotate: false
+  xy: 65, 8
   size: 16, 6
   orig: 16, 6
   offset: 0, 0
   index: -1
 Neck
   rotate: true
-  xy: 470, 4
+  xy: 514, 83
   size: 43, 41
   orig: 43, 41
   offset: 0, 0
   index: -1
 Nose
-  rotate: false
-  xy: 525, 4
+  rotate: true
+  xy: 39, 4
   size: 10, 13
   orig: 10, 13
   offset: 0, 0
   index: -1
 R-Arm
-  rotate: false
-  xy: 335, 42
+  rotate: true
+  xy: 102, 16
   size: 38, 98
   orig: 38, 98
   offset: 0, 0
   index: -1
 R-Calf
   rotate: true
-  xy: 286, 3
+  xy: 382, 22
   size: 35, 92
   orig: 35, 92
   offset: 0, 0
   index: -1
 R-Cheek
   rotate: true
-  xy: 558, 5
+  xy: 54, 2
   size: 12, 9
   orig: 12, 9
   offset: 0, 0
   index: -1
 R-Ear
   rotate: true
-  xy: 146, 3
+  xy: 447, 61
   size: 28, 32
   orig: 28, 32
   offset: 0, 0
   index: -1
 R-Eye
-  rotate: true
-  xy: 193, 2
+  rotate: false
+  xy: 100, 3
   size: 5, 11
   orig: 5, 11
   offset: 0, 0
   index: -1
 R-Eyebrow
   rotate: false
-  xy: 537, 5
+  xy: 2, 2
   size: 19, 12
   orig: 19, 12
   offset: 0, 0
   index: -1
 R-Forearm
-  rotate: false
-  xy: 488, 52
+  rotate: true
+  xy: 202, 13
   size: 41, 88
   orig: 41, 88
   offset: 0, 0
   index: -1
 R-Shoe
   rotate: true
-  xy: 531, 77
+  xy: 481, 63
   size: 63, 31
   orig: 63, 31
   offset: 0, 0
   index: -1
 R-Thigh
-  rotate: false
-  xy: 74, 6
-  size: 70, 134
+  rotate: true
+  xy: 144, 56
+  size: 70, 140
   orig: 70, 140
-  offset: 0, 2
+  offset: 0, 0
   index: -1
 SideHair
   rotate: true
-  xy: 180, 9
+  xy: 388, 67
   size: 22, 57
   orig: 22, 57
   offset: 0, 0
   index: -1
 Torso
-  rotate: false
-  xy: 146, 33
+  rotate: true
+  xy: 542, 3
   size: 78, 107
   orig: 78, 107
   offset: 0, 0
