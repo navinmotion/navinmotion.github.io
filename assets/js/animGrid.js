@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   showControls: true,
                   premultipliedAlpha: true,
                   alpha: true,
-                  defaultMix: 1,
+                  defaultMix: 0,
                   interactive: false,
                 });
               } catch (error) {
