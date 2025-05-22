@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Viking Warrior',
       link: '',
       type: 'video',
-      video: 'assets/video/Viking-Warrior.webm' // <== key for single video
+      video: 'assets/video/Viking-Warrior.webm'
     },
     {
       title: 'Chibi Boy',
