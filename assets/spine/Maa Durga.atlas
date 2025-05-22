@@ -1,300 +1,104 @@
-
 Maa Durga.png
-size: 1916,363
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
+size:2048,512
+filter:Linear,Linear
+pma:true
 Crown
-  rotate: true
-  xy: 1703, 178
-  size: 113, 139
-  orig: 113, 139
-  offset: 0, 0
-  index: -1
+bounds:643,68,113,139
+rotate:90
 Face
-  rotate: false
-  xy: 1844, 213
-  size: 70, 78
-  orig: 70, 78
-  offset: 0, 0
-  index: -1
+bounds:1601,332,70,78
 Hair
-  rotate: true
-  xy: 293, 30
-  size: 331, 327
-  orig: 331, 327
-  offset: 0, 0
-  index: -1
+bounds:444,183,331,327
 Head-L
-  rotate: false
-  xy: 2, 15
-  size: 289, 346
-  orig: 289, 346
-  offset: 0, 0
-  index: -1
+bounds:777,221,289,346
+rotate:90
 L-Ear-L
-  rotate: true
-  xy: 654, 5
-  size: 46, 42
-  orig: 46, 42
-  offset: 0, 0
-  index: -1
+bounds:130,25,46,42
 L-Eye-L
-  rotate: false
-  xy: 387, 12
-  size: 14, 16
-  orig: 14, 16
-  offset: 0, 0
-  index: -1
+bounds:428,184,14,16
 L-Eyebrow
-  rotate: false
-  xy: 2, 2
-  size: 20, 11
-  orig: 20, 11
-  offset: 0, 0
-  index: -1
+bounds:671,2,20,11
+rotate:90
 L-Eyeclosed
-  rotate: true
-  xy: 327, 9
-  size: 19, 13
-  orig: 19, 13
-  offset: 0, 0
-  index: -1
+bounds:719,53,19,13
 L-Eyelash
-  rotate: true
-  xy: 342, 9
-  size: 19, 13
-  orig: 19, 13
-  offset: 0, 0
-  index: -1
+bounds:1933,427,19,13
 L-Eyewhite
-  rotate: true
-  xy: 293, 5
-  size: 23, 15
-  orig: 23, 15
-  offset: 0, 0
-  index: -1
+bounds:1125,231,23,15
 L-Forearm
-  rotate: false
-  xy: 1064, 4
-  size: 54, 85
-  orig: 54, 85
-  offset: 0, 0
-  index: -1
+bounds:43,13,54,85
+rotate:90
 L-Hand
-  rotate: true
-  xy: 959, 15
-  size: 36, 31
-  orig: 36, 31
-  offset: 0, 0
-  index: -1
+bounds:777,183,36,31
+rotate:90
 L-L-Eyeclosed
-  rotate: false
-  xy: 419, 13
-  size: 14, 15
-  orig: 14, 15
-  offset: 0, 0
-  index: -1
+bounds:697,7,14,15
 L-Pupil
-  rotate: false
-  xy: 46, 3
-  size: 10, 10
-  orig: 10, 10
-  offset: 0, 0
-  index: -1
+bounds:629,88,10,10
 L-R-Eyeclosed
-  rotate: false
-  xy: 435, 14
-  size: 14, 14
-  orig: 14, 14
-  offset: 0, 0
-  index: -1
+bounds:1150,232,14,14
 LArm
-  rotate: true
-  xy: 802, 12
-  size: 39, 65
-  orig: 39, 65
-  offset: 0, 0
-  index: -1
+bounds:2,2,39,65
 LBLeg
-  rotate: false
-  xy: 1302, 113
-  size: 103, 248
-  orig: 103, 248
-  offset: 0, 0
-  index: -1
+bounds:1230,262,103,248
 LFLeg
-  rotate: false
-  xy: 1064, 91
-  size: 131, 270
-  orig: 131, 270
-  offset: 0, 0
-  index: -1
+bounds:2,69,131,270
+rotate:90
 LH2
-  rotate: true
-  xy: 1407, 121
-  size: 240, 98
-  orig: 240, 98
-  offset: 0, 0
-  index: -1
+bounds:1440,412,240,98
 LH3
-  rotate: false
-  xy: 1737, 293
-  size: 162, 68
-  orig: 162, 68
-  offset: 0, 0
-  index: -1
+bounds:1884,442,162,68
 LH4
-  rotate: false
-  xy: 1609, 162
-  size: 92, 199
-  orig: 92, 199
-  offset: 0, 0
-  index: -1
+bounds:428,6,92,199
+rotate:90
 Mouth
-  rotate: false
-  xy: 70, 5
-  size: 22, 8
-  orig: 22, 8
-  offset: 0, 0
-  index: -1
+bounds:1230,252,22,8
 Neck
-  rotate: false
-  xy: 622, 4
-  size: 30, 47
-  orig: 30, 47
-  offset: 0, 0
-  index: -1
+bounds:1884,410,30,47
+rotate:90
 Nose
-  rotate: true
-  xy: 109, 5
-  size: 8, 4
-  orig: 8, 4
-  offset: 0, 0
-  index: -1
+bounds:1673,402,8,4
+rotate:90
 R-Ear-L
-  rotate: true
-  xy: 698, 5
-  size: 46, 42
-  orig: 46, 42
-  offset: 0, 0
-  index: -1
+bounds:671,24,46,42
 R-Eye-L
-  rotate: false
-  xy: 403, 12
-  size: 14, 16
-  orig: 14, 16
-  offset: 0, 0
-  index: -1
+bounds:1640,275,14,16
 R-Eyebrow
-  rotate: false
-  xy: 24, 2
-  size: 20, 11
-  orig: 20, 11
-  offset: 0, 0
-  index: -1
+bounds:684,2,20,11
+rotate:90
 R-Eyeclosed
-  rotate: true
-  xy: 357, 9
-  size: 19, 13
-  orig: 19, 13
-  offset: 0, 0
-  index: -1
+bounds:784,168,19,13
 R-Eyelash
-  rotate: true
-  xy: 372, 9
-  size: 19, 13
-  orig: 19, 13
-  offset: 0, 0
-  index: -1
+bounds:810,206,19,13
 R-Eyewhite
-  rotate: true
-  xy: 310, 6
-  size: 22, 15
-  orig: 22, 15
-  offset: 0, 0
-  index: -1
+bounds:178,52,22,15
 R-Forearm
-  rotate: false
-  xy: 742, 11
-  size: 58, 40
-  orig: 64, 40
-  offset: 0, 0
-  index: -1
+bounds:629,2,64,40
+rotate:90
 R-Hand
-  rotate: true
-  xy: 928, 14
-  size: 37, 29
-  orig: 37, 29
-  offset: 0, 0
-  index: -1
+bounds:1640,293,37,29
+rotate:90
 R-Pupil
-  rotate: false
-  xy: 58, 3
-  size: 10, 10
-  orig: 10, 10
-  offset: 0, 0
-  index: -1
+bounds:1601,261,10,10
 RArm
-  rotate: true
-  xy: 869, 14
-  size: 37, 57
-  orig: 37, 57
-  offset: 0, 0
-  index: -1
+bounds:1601,273,37,57
 RBLeg
-  rotate: true
-  xy: 1335, 8
-  size: 103, 248
-  orig: 103, 248
-  offset: 0, 0
-  index: -1
+bounds:1335,262,103,248
 RFLeg
-  rotate: false
-  xy: 1197, 99
-  size: 103, 262
-  orig: 103, 262
-  offset: 0, 0
-  index: -1
+bounds:1125,248,103,262
 RH2
-  rotate: false
-  xy: 1120, 8
-  size: 213, 81
-  orig: 213, 81
-  offset: 0, 0
-  index: -1
+bounds:428,100,213,81
 RH3
-  rotate: false
-  xy: 1585, 7
-  size: 150, 152
-  orig: 150, 152
-  offset: 0, 0
-  index: -1
+bounds:274,50,150,152
+rotate:90
 RH4
-  rotate: false
-  xy: 1507, 161
-  size: 100, 200
-  orig: 100, 200
-  offset: 0, 0
-  index: -1
+bounds:1682,410,100,200
+rotate:90
 Third_Eye
-  rotate: true
-  xy: 94, 5
-  size: 8, 13
-  orig: 8, 13
-  offset: 0, 0
-  index: -1
+bounds:43,3,8,13
+rotate:90
 Torso
-  rotate: false
-  xy: 1737, 17
-  size: 149, 159
-  orig: 149, 159
-  offset: 0, 0
-  index: -1
+bounds:1440,261,149,159
+rotate:90
 Trishul
-  rotate: false
-  xy: 622, 53
-  size: 440, 308
-  orig: 440, 308
-  offset: 0, 0
-  index: -1
+bounds:2,202,440,308

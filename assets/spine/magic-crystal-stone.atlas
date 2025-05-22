@@ -1,48 +1,18 @@
-
 magic-crystal-stone.png
-size: 1678,833
-format: RGBA8888
-filter: Linear,Linear
-repeat: none
+size:2048,1024
+filter:Linear,Linear
+pma:true
 Blue Stone
-  rotate: true
-  xy: 1103, 9
-  size: 279, 315
-  orig: 279, 315
-  offset: 0, 0
-  index: -1
+bounds:1103,181,279,315
+rotate:90
 Glitter1
-  rotate: false
-  xy: 1506, 328
-  size: 79, 200
-  orig: 79, 200
-  offset: 0, 0
-  index: -1
+bounds:1420,260,79,200
 Glitter2
-  rotate: false
-  xy: 1420, 71
-  size: 206, 217
-  orig: 206, 217
-  offset: 0, 0
-  index: -1
+bounds:1506,786,206,217
 Glow1
-  rotate: false
-  xy: 2, 2
-  size: 1099, 829
-  orig: 1099, 829
-  offset: 0, 0
-  index: -1
+bounds:2,174,1099,829
 Glow2
-  rotate: false
-  xy: 1103, 290
-  size: 401, 541
-  orig: 401, 541
-  offset: 0, 0
-  index: -1
+bounds:1103,462,401,541
 Pink Stone
-  rotate: false
-  xy: 1506, 530
-  size: 170, 301
-  orig: 170, 301
-  offset: 0, 0
-  index: -1
+bounds:2,2,170,301
+rotate:90

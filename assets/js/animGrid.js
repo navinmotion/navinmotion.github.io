@@ -16,30 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const interval = setInterval(() => {
         if (window.spine) { // Check if the spine object is available
           clearInterval(interval);
+          spineResourcesLoaded = true;
           callback();
         }
       }, 100); // Check every 100ms
       return;
     }
 
-    // Load CSS
+    // Load CSS from unpkg CDN
     const spineCSS = document.createElement('link');
     spineCSS.rel = 'stylesheet';
-    spineCSS.href = 'assets/css/spine-player.css';
+    spineCSS.href = 'https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/spine-player.css';
     document.head.appendChild(spineCSS);
 
     spineCSS.onerror = () => {
       console.error('Failed to load Spine CSS');
     };
 
-    // Load JS
+    // Load JS from unpkg CDN
     const spineJS = document.createElement('script');
-    spineJS.src = 'assets/js/spine-player.js';
+    spineJS.src = 'https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/iife/spine-player.js';
     document.body.appendChild(spineJS);
 
     spineJS.onload = () => {
       console.log('Spine JS loaded');
       spineJSLoaded = true;
+      spineResourcesLoaded = true;
       if (callback) callback(); // Execute callback when JS is loaded
     };
 
@@ -62,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        jsonUrl: 'assets/spine/samurai.json',
-        atlasUrl: 'assets/spine/samurai.atlas',
+        skeleton: 'assets/spine/samurai.json', // Updated from jsonUrl
+        atlas: 'assets/spine/samurai.atlas', // Updated from atlasUrl
         animation: '04 damage',
         backgroundColor: '#1f242d'
       }
@@ -75,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        jsonUrl: 'assets/spine/Anubis.json',
-        atlasUrl: 'assets/spine/Anubis.atlas',
+        skeleton: 'assets/spine/Anubis.json', // Updated from jsonUrl
+        atlas: 'assets/spine/Anubis.atlas', // Updated from atlasUrl
         animation: '02 walk',
         backgroundColor: '#1f242d'
       }
@@ -88,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        jsonUrl: 'assets/spine/Maa Durga.json',
-        atlasUrl: 'assets/spine/Maa Durga.atlas',
+        skeleton: 'assets/spine/Maa Durga.json', // Updated from jsonUrl
+        atlas: 'assets/spine/Maa Durga.atlas', // Updated from atlasUrl
         animation: 'idle',
         backgroundColor: '#1f242d'
       }
@@ -97,18 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Viking Warrior',
       link: '',
-      type: 'spine-player',
-      spineData: {
-        width: '100%',
-        height: '270px',
-        jsonUrl: 'assets/spine/Viking-Warrior.json',
-        atlasUrl: 'assets/spine/Viking-Warrior.atlas',
-        animation: '',
-        backgroundColor: '#1f242d',
-        video: [
-          'assets/video/Viking-Warrior.webm',
-        ]
-      }
+      type: 'video',
+      video: 'assets/video/Viking-Warrior.webm' // <== key for single video
     },
     {
       title: 'Chibi Boy',
@@ -117,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        jsonUrl: 'assets/spine/Chibi-Boy.json',
-        atlasUrl: 'assets/spine/Chibi-Boy.atlas',
+        skeleton: 'assets/spine/Chibi-Boy.json', // Updated from jsonUrl
+        atlas: 'assets/spine/Chibi-Boy.atlas', // Updated from atlasUrl
         animation: 'walking',
         backgroundColor: '#1f242d'
       }
@@ -130,9 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '400px',
-        jsonUrl: 'assets/spine/magic-crystal-stone.json',
-        atlasUrl: 'assets/spine/magic-crystal-stone.atlas',
-        animation: '',
+        skeleton: 'assets/spine/magic-crystal-stone.json', // Updated from jsonUrl
+        atlas: 'assets/spine/magic-crystal-stone.atlas', // Updated from atlasUrl
+        animation: 'animation',
         backgroundColor: '#1f242d'
       }
     },
@@ -143,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '400px',
-        jsonUrl: 'assets/spine/Egypt-Queen.json',
-        atlasUrl: 'assets/spine/Egypt-Queen.atlas',
-        animation: '',
+        skeleton: 'assets/spine/Egypt-Queen.json', // Updated from jsonUrl
+        atlas: 'assets/spine/Egypt-Queen.atlas', // Updated from atlasUrl
+        animation: 'idle-nodding',
         backgroundColor: '#1f242d',
         video: [
           'assets/video/Egypt-Queen.webm',
@@ -202,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
           heading.textContent = post.title; // Set the title of the post
           workInfo.appendChild(heading);
         }
-
 
         // Check if the post is an image or a video
         if (post.type === 'image') {
@@ -324,29 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
           slider.classList.add('slider');
 
           let spineContainer = document.createElement('div');
-          spineContainer.id = `spine_container_${Math.random().toString(36).substring(2, 15)}`;
+          const containerId = `spine_container_${Math.random().toString(36).substring(2, 15)}`;
+          spineContainer.id = containerId;
           spineContainer.style.width = post.spineData.width;
           spineContainer.style.height = post.spineData.height;
 
           slider.appendChild(spineContainer);
-
-          // Dynamically load the resources and initialize Spine Player
-          loadSpinePlayerResources(() => {
-            console.log('Initializing Spine Player...');
-            new spine.SpinePlayer(spineContainer.id, {
-              jsonUrl: post.spineData.jsonUrl,
-              atlasUrl: post.spineData.atlasUrl,
-              animation: post.spineData.animation,
-              backgroundColor: post.spineData.backgroundColor,
-              showControls: true,
-              premultipliedAlpha: true,
-              alpha: true,
-              defaultMix: 1,
-              viewport: {
-                disableInput: true // disables canvas touch/gesture input only
-              }
-            });
-          });
 
           // Check if videos are present
           let hasVideos = post.spineData.video && Array.isArray(post.spineData.video) && post.spineData.video.length > 0;
@@ -406,14 +380,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Add the slider to the anchor
           anchor.appendChild(slider);
+
+          // Initialize Spine Player after DOM is ready
+          loadSpinePlayerResources(() => {
+            // Use setTimeout to ensure DOM is fully rendered
+            setTimeout(() => {
+              console.log('Initializing Spine Player...');
+              try {
+                new spine.SpinePlayer(containerId, {
+                  skeleton: post.spineData.skeleton, // Updated from jsonUrl
+                  atlas: post.spineData.atlas, // Updated from atlasUrl
+                  animation: post.spineData.animation,
+                  backgroundColor: post.spineData.backgroundColor,
+                  showControls: true,
+                  premultipliedAlpha: true,
+                  alpha: true,
+                  defaultMix: 1,
+                  interactive: false,
+                });
+              } catch (error) {
+                console.error('Failed to initialize Spine Player:', error);
+              }
+            }, 100);
+          });
         }
-
-
-
-
-
-
-
         anchor.appendChild(workInfo);
         postDiv.appendChild(anchor);
         column.appendChild(postDiv);
@@ -439,6 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     previousScreenSize = innerWidth;
   });
+
   // Load Spine resources and then render the grid
   loadSpinePlayerResources(() => {
     if (previousScreenSize < 600) {
