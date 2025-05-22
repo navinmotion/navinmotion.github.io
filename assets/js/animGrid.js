@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        skeleton: 'assets/spine/samurai.json', // Updated from jsonUrl
-        atlas: 'assets/spine/samurai.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/samurai.json',
+        atlas: 'assets/spine/samurai.atlas',
         animation: '04 damage',
         backgroundColor: '#1f242d'
       }
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        skeleton: 'assets/spine/Anubis.json', // Updated from jsonUrl
-        atlas: 'assets/spine/Anubis.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/Anubis.json',
+        atlas: 'assets/spine/Anubis.atlas',
         animation: '02 walk',
         backgroundColor: '#1f242d'
       }
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        skeleton: 'assets/spine/Maa Durga.json', // Updated from jsonUrl
-        atlas: 'assets/spine/Maa Durga.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/Maa Durga.json',
+        atlas: 'assets/spine/Maa Durga.atlas',
         animation: 'idle',
         backgroundColor: '#1f242d'
       }
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '500px',
-        skeleton: 'assets/spine/Chibi-Boy.json', // Updated from jsonUrl
-        atlas: 'assets/spine/Chibi-Boy.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/Chibi-Boy.json',
+        atlas: 'assets/spine/Chibi-Boy.atlas',
         animation: 'walking',
         backgroundColor: '#1f242d'
       }
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '400px',
-        skeleton: 'assets/spine/magic-crystal-stone.json', // Updated from jsonUrl
-        atlas: 'assets/spine/magic-crystal-stone.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/magic-crystal-stone.json',
+        atlas: 'assets/spine/magic-crystal-stone.atlas',
         animation: 'animation',
         backgroundColor: '#1f242d'
       }
@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spineData: {
         width: '100%',
         height: '400px',
-        skeleton: 'assets/spine/Egypt-Queen.json', // Updated from jsonUrl
-        atlas: 'assets/spine/Egypt-Queen.atlas', // Updated from atlasUrl
+        skeleton: 'assets/spine/Egypt-Queen.json',
+        atlas: 'assets/spine/Egypt-Queen.atlas',
         animation: 'idle-nodding',
         backgroundColor: '#1f242d',
         video: [
@@ -388,8 +388,8 @@ document.addEventListener('DOMContentLoaded', () => {
               console.log('Initializing Spine Player...');
               try {
                 new spine.SpinePlayer(containerId, {
-                  skeleton: post.spineData.skeleton, // Updated from jsonUrl
-                  atlas: post.spineData.atlas, // Updated from atlasUrl
+                  skeleton: post.spineData.skeleton,
+                  atlas: post.spineData.atlas,
                   animation: post.spineData.animation,
                   backgroundColor: post.spineData.backgroundColor,
                   showControls: true,
