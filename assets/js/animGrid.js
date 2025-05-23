@@ -97,22 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
-      title: 'Viking Warrior',
-      link: '',
-      type: 'video',
-      video: 'assets/video/Viking-Warrior.webm'
-    },
-    {
-      title: 'Chibi Boy',
+      title: 'Egypt Queen',
       link: '',
       type: 'spine-player',
       spineData: {
         width: '100%',
-        height: '500px',
-        skeleton: 'assets/spine/Chibi-Boy.json',
-        atlas: 'assets/spine/Chibi-Boy.atlas',
-        animation: 'walking',
-        backgroundColor: '#1f242d'
+        height: '400px',
+        skeleton: 'assets/spine/Egypt-Queen.json',
+        atlas: 'assets/spine/Egypt-Queen.atlas',
+        animation: 'idle-nodding',
+        backgroundColor: '#1f242d',
+        // video: [
+        //   'assets/video/Egypt-Queen.webm',
+        // ]
       }
     },
     {
@@ -129,20 +126,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
-      title: 'Egypt Queen',
+      title: 'Chibi Boy',
       link: '',
       type: 'spine-player',
       spineData: {
         width: '100%',
-        height: '400px',
-        skeleton: 'assets/spine/Egypt-Queen.json',
-        atlas: 'assets/spine/Egypt-Queen.atlas',
-        animation: 'idle-nodding',
-        backgroundColor: '#1f242d',
-        video: [
-          'assets/video/Egypt-Queen.webm',
-        ]
+        height: '500px',
+        skeleton: 'assets/spine/Chibi-Boy.json',
+        atlas: 'assets/spine/Chibi-Boy.atlas',
+        animation: 'walking',
+        backgroundColor: '#1f242d'
       }
+    },
+    {
+      title: 'Viking Warrior',
+      link: '',
+      type: 'video',
+      video: 'assets/video/Viking-Warrior.webm'
     },
     {
       title: 'FlyingPCG',
