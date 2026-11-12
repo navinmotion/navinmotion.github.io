@@ -24,9 +24,9 @@
   <link href="../assets/img/logo-nk-touch-icon.webp" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
@@ -88,10 +88,20 @@
         <div class="row">
           <div class="col-md-6 order-2" data-aos="fade-up">
             <h2 class="greet">Namaskar!</h2>
-            <p>My name is Navin Kumar, a 2D Animator based in India. I love to bring inanimate objects to
-              life with vibrant colors, shapes and motion.</p>
-            <p>I help brands, creatives and small businesses to spice up their work with animated explainer videos,
-              short commercial ads & storytelling videos. With a focus on the gaming industry, I also enhance game narratives and virtual worlds through dynamic animations that engage and immerse players.
+            <p>I'm Navin Kumar, a Technical Artist based in India. I am passionate about Technical Art, Skeletal
+              Animation and Game Design. I combine creative vision with technical expertise to craft high-quality,
+              immersive
+              gaming experiences.</p>
+            <p>I enjoy bridging the gap between art and technology by developing optimized workflows, creating
+              expressive animations and crafting visually compelling real-time effects.</p>
+            <p>I specialize in:
+              <br>🎬 <b>Skeletal Animation</b>- Bringing characters, creatures, and worlds to life through expressive
+              animation.
+              <br>✨ <b>Shaders & VFX</b> - Designing real-time visual effects and shaders that enhance gameplay and
+              aesthetics.
+              <br>🎮 <b>Technical Art</b> - Building efficient art pipelines, optimizing assets, and collaborating
+              across
+              disciplines to deliver polished interactive experiences.
             </p>
             <p>As a passionate and motivated professional, I'm constantly striving to improve my techniques, expand my
               skillset and find new opportunities to grow. Each of my projects - both solo and collaborative - have
@@ -109,8 +119,6 @@
               <img src="../assets/img/Navin.webp" alt="Image" class="img-fluid">
             </div>
           </div>
-
-
         </div>
       </div>
     </section><!-- End About Section -->
@@ -120,7 +128,7 @@
       <div class="container" data-aos="fade-up">
         <div class="row align-items-end mb-4">
           <div class="col-12">
-            <h3 class="h3 heading">Selected Clients</h3>
+            <h3 class="heading">Selected Clients</h3>
             <p>Blessed and grateful to work with some amazing clients - an experience that has added value to my career
               and joy to my heart.<br>Here are some of them.</p>
           </div>
@@ -143,7 +151,7 @@
           </div>
           <div class="col-6 col-sm-4 col-md-2 mb-3">
             <a href="#" class="client-logo">
-              <h4>Isha Foundation</h4>
+              <h4>FunWave Studio</h4>
             </a>
           </div>
           <div class="col-6 col-sm-4 col-md-2 mb-3">
@@ -164,7 +172,8 @@
             <p>Don't hesitate to reach out. Got a question? Have a fun project or just want to say hello? Well, you've
               come to right place my friend!</p>
 
-            <form id="contactForm" action="https://launchpadnetworkx.vercel.app/api/contact_navin" method="post" role="form" class="php-email-form">
+            <form id="contactForm" action="https://launchpadnetworkx.vercel.app/api/contact_navin" method="post"
+              role="form" class="php-email-form">
 
               <div class="row gy-3">
                 <div class="col-md-6 form-group">
@@ -173,15 +182,18 @@
                 </div>
                 <div class="col-md-6 form-group">
                   <label for="name">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"
+                    required>
                 </div>
                 <div class="col-md-12 form-group">
                   <label for="name">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter your subject" required>
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter your subject"
+                    required>
                 </div>
                 <div class="col-md-12 form-group">
                   <label for="name">Message</label>
-                  <textarea type="text" class="form-control" name="message" cols="30" rows="10" placeholder="Type your message..." required></textarea>
+                  <textarea type="text" class="form-control" name="message" cols="30" rows="10"
+                    placeholder="Type your message..." required></textarea>
                 </div>
 
                 <div class="col-md-12 my-3">
@@ -199,44 +211,44 @@
 
             <script>
               document.getElementById("contactForm").addEventListener("submit", async function (event) {
-                  event.preventDefault();
-              
-                  const formData = new FormData(this);
-                  const formObject = {};
-                  formData.forEach((value, key) => formObject[key] = value);
-              
-                  try {
-                      const response = await fetch("https://launchpadnetworkx.vercel.app/api/contact_navin", {
-                          method: "POST",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify(formObject)
-                      });
-              
-                      const data = await response.json();
-              
-                      if (response.ok) {
-                          alert("✅ Success! Your message has been sent.");
-                          this.reset();
-                      } 
-                      else {
-                          alert("❌ Error! " + data.message);
-                      }
-                  } 
-                  catch (error) {
-                      alert("❌ Error! Failed to submit the form. Try again later.");
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                const formObject = {};
+                formData.forEach((value, key) => formObject[key] = value);
+
+                try {
+                  const response = await fetch("https://launchpadnetworkx.vercel.app/api/contact_navin", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formObject)
+                  });
+
+                  const data = await response.json();
+
+                  if (response.ok) {
+                    alert("✅ Success! Your message has been sent.");
+                    this.reset();
                   }
+                  else {
+                    alert("❌ Error! " + data.message);
+                  }
+                }
+                catch (error) {
+                  alert("❌ Error! Failed to submit the form. Try again later.");
+                }
               });
-              </script>
-              
+            </script>
+
           </div>
 
           <div class="col-md-6 mb-5" data-aos="fade-up">
 
-            <h2>Skills</h2>
+            <h2>Technical Expertise</h2>
             <ul class="list-unstyled">
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>After Effects &nbsp</strong>
+                  <strong>Unity &nbsp</strong>
                   <!-- <span class="ml-auto">87%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -246,7 +258,7 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Spine Pro &nbsp</strong>
+                  <strong>Godot &nbsp</strong>
                   <!-- <span class="ml-auto">77%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -256,7 +268,7 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Illustrator &nbsp</strong>
+                  <strong>Spine &nbsp</strong>
                   <!-- <span class="ml-auto">77%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -266,7 +278,17 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Photoshop &nbsp</strong>
+                  <strong>GitKraken &nbsp</strong>
+                  <!-- <span class="ml-auto">80%</span> -->
+                </div>
+                <div class="progress custom-progress">
+                  <div class="progress-bar" role="progressbar" style="width: 71%" aria-valuenow="71" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+                </div>
+              </li>
+              <li class="mb-3">
+                <div class="d-flex mb-1">
+                  <strong>After Effects &nbsp</strong>
                   <!-- <span class="ml-auto">71%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -286,7 +308,7 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Premiere Pro &nbsp</strong>
+                  <strong>Photoshop &nbsp</strong>
                   <!-- <span class="ml-auto">85%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -296,7 +318,7 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Davinci Resolve &nbsp</strong>
+                  <strong>Premiere Pro &nbsp</strong>
                   <!-- <span class="ml-auto">77%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -306,7 +328,7 @@
               </li>
               <li class="mb-3">
                 <div class="d-flex mb-1">
-                  <strong>Unity &nbsp</strong>
+                  <strong>Davinci Resolve &nbsp</strong>
                   <!-- <span class="ml-auto">80%</span> -->
                 </div>
                 <div class="progress custom-progress">
@@ -329,7 +351,7 @@
       <div class="row">
         <div class="col-sm-6 social">
           <a href="https://www.behance.net/navin-kumar" target="_blank"><span class="bi bi-behance"></span></a>
-          <a href="https://dribbble.com/navinmotion" target="_blank"><span class="bi bi-dribbble"></span></a>
+          <a href="https://github.com/navinmotion" target="_blank"><span class="bi bi-github"></span></a>
           <a href="https://www.instagram.com/navinmotion" target="_blank"><span class="bi bi-instagram"></span></a>
           <a href="https://www.linkedin.com/in/navinkrprasad" target="_blank"><span class="bi bi-linkedin"></span></a>
           <a href="https://vimeo.com/navinmotion" target="_blank"><span class="bi bi-vimeo"></span></a>

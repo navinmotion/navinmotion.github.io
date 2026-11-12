@@ -4,7 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let spineResourcesLoaded = false;
   let spineJSLoaded = false;
 
+  function isWebGLSupported() {
+    try {
+      const canvas = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (canvas.getContext('webgl2') || canvas.getContext('webgl')));
+    } catch (e) {
+      return false;
+    }
+  }
+
   function loadSpineWebComponentsResources(callback) {
+    if (!isWebGLSupported()) {
+      console.warn('WebGL is not supported or is blocked in this browser.');
+      return;
+    }
+
     if (spineResourcesLoaded) {
       // Resources are already loaded, directly call the callback
       callback();
@@ -375,116 +389,134 @@ document.addEventListener('DOMContentLoaded', () => {
           // Add the slider to the anchor
           anchor.appendChild(slider);
 
-          // Initialize Spine Web Components after DOM is ready
-          loadSpineWebComponentsResources(() => {
-            let wc = document.createElement('spine-skeleton');
-            wc.setAttribute('identifier', containerId);
-            wc.setAttribute('atlas', post.spineData.atlas);
-            wc.setAttribute('skeleton', post.spineData.skeleton);
-            if (post.spineData.animation) {
-                wc.setAttribute('animation', post.spineData.animation);
-            }
-            wc.setAttribute('fit', 'contain');
-            wc.setAttribute('auto-calculate-bounds', '');
-            wc.style.width = '100%';
-            wc.style.height = post.spineData.height;
-            wc.style.display = 'block';
-            wc.style.backgroundColor = 'transparent';
-            
-            spineContainer.appendChild(wc);
-
-            // Add UI for Dropdowns
-            let controlsDiv = document.createElement('div');
-            controlsDiv.style.padding = '10px';
-            controlsDiv.style.display = 'flex';
-            controlsDiv.style.gap = '10px';
-            // Stop events from propagating so you can select without triggering other clicks
-            controlsDiv.addEventListener('click', (e) => e.stopPropagation());
-            controlsDiv.addEventListener('mousedown', (e) => e.stopPropagation());
-            controlsDiv.addEventListener('touchstart', (e) => e.stopPropagation());
-
-            let animSelect = document.createElement('select');
-            animSelect.style.flex = '1';
-            animSelect.style.padding = '6px';
-            animSelect.style.borderRadius = '6px';
-            animSelect.style.backgroundColor = '#323946';
-            animSelect.style.border = '1px solid #4a5568';
-            animSelect.style.color = '#ffffff';
-            animSelect.style.outline = 'none';
-            animSelect.style.cursor = 'pointer';
-
-            let skinSelect = document.createElement('select');
-            skinSelect.style.flex = '1';
-            skinSelect.style.padding = '6px';
-            skinSelect.style.borderRadius = '6px';
-            skinSelect.style.backgroundColor = '#323946';
-            skinSelect.style.border = '1px solid #4a5568';
-            skinSelect.style.color = '#ffffff';
-            skinSelect.style.outline = 'none';
-            skinSelect.style.cursor = 'pointer';
-
-            controlsDiv.appendChild(animSelect);
-            controlsDiv.appendChild(skinSelect);
-            spineContainer.appendChild(controlsDiv);
-
-            setTimeout(() => {
-              const skeletonComponent = spine.getSkeleton(containerId);
-              if (!skeletonComponent) {
-                console.error('Spine skeleton not found for id:', containerId);
-                return;
+          if (!isWebGLSupported()) {
+            let notice = document.createElement('div');
+            notice.style.height = post.spineData.height;
+            notice.style.display = 'flex';
+            notice.style.flexDirection = 'column';
+            notice.style.alignItems = 'center';
+            notice.style.justifyContent = 'center';
+            notice.style.padding = '20px';
+            notice.style.textAlign = 'center';
+            notice.style.color = '#a0aec0';
+            notice.innerHTML = `
+              <div style="font-size: 28px; margin-bottom: 10px;">⚠️</div>
+              <div style="font-weight: 600; color: #f56565; margin-bottom: 6px;">WebGL Disabled or Blocked</div>
+              <div style="font-size: 13px; line-height: 1.5; max-width: 280px;">Brave Shields or browser graphics acceleration is blocking WebGL. Allow WebGL in Brave Shields or enable Graphics Acceleration in settings.</div>
+            `;
+            spineContainer.appendChild(notice);
+          } else {
+            // Initialize Spine Web Components after DOM is ready
+            loadSpineWebComponentsResources(() => {
+              let wc = document.createElement('spine-skeleton');
+              wc.setAttribute('identifier', containerId);
+              wc.setAttribute('atlas', post.spineData.atlas);
+              wc.setAttribute('skeleton', post.spineData.skeleton);
+              if (post.spineData.animation) {
+                  wc.setAttribute('animation', post.spineData.animation);
               }
-              skeletonComponent.whenReady.then((skelInfo) => {
-                let skeleton = skelInfo.skeleton;
-                
-                let showAnimSelect = false;
-                let showSkinSelect = false;
+              wc.setAttribute('fit', 'contain');
+              wc.setAttribute('auto-calculate-bounds', '');
+              wc.style.width = '100%';
+              wc.style.height = post.spineData.height;
+              wc.style.display = 'block';
+              wc.style.backgroundColor = 'transparent';
+              
+              spineContainer.appendChild(wc);
 
-                // Populate Animations
-                let animations = skeleton.data.animations;
-                if (animations.length > 1) {
-                    showAnimSelect = true;
-                    animations.forEach(anim => {
-                      let opt = document.createElement('option');
-                      opt.value = anim.name;
-                      opt.textContent = anim.name;
-                      if (anim.name === post.spineData.animation) {
-                        opt.selected = true;
-                      }
-                      animSelect.appendChild(opt);
-                    });
-                    animSelect.addEventListener('change', (e) => {
-                      wc.setAttribute('animation', e.target.value);
-                    });
-                } else {
-                    animSelect.style.display = 'none';
-                }
+              // Add UI for Dropdowns
+              let controlsDiv = document.createElement('div');
+              controlsDiv.style.padding = '10px';
+              controlsDiv.style.display = 'flex';
+              controlsDiv.style.gap = '10px';
+              // Stop events from propagating so you can select without triggering other clicks
+              controlsDiv.addEventListener('click', (e) => e.stopPropagation());
+              controlsDiv.addEventListener('mousedown', (e) => e.stopPropagation());
+              controlsDiv.addEventListener('touchstart', (e) => e.stopPropagation());
 
-                // Populate Skins
-                let skins = skeleton.data.skins;
-                if (skins.length > 1) { // more than default skin
-                    showSkinSelect = true;
-                    skins.forEach(skin => {
-                      let opt = document.createElement('option');
-                      opt.value = skin.name;
-                      opt.textContent = skin.name;
-                      skinSelect.appendChild(opt);
-                    });
-                    skinSelect.addEventListener('change', (e) => {
-                      wc.setAttribute('skin', e.target.value);
-                    });
-                } else {
-                    skinSelect.style.display = 'none';
-                }
+              let animSelect = document.createElement('select');
+              animSelect.style.flex = '1';
+              animSelect.style.padding = '6px';
+              animSelect.style.borderRadius = '6px';
+              animSelect.style.backgroundColor = '#323946';
+              animSelect.style.border = '1px solid #4a5568';
+              animSelect.style.color = '#ffffff';
+              animSelect.style.outline = 'none';
+              animSelect.style.cursor = 'pointer';
 
-                // Hide the whole container if there are no dropdowns needed
-                if (!showAnimSelect && !showSkinSelect) {
-                    controlsDiv.style.display = 'none';
+              let skinSelect = document.createElement('select');
+              skinSelect.style.flex = '1';
+              skinSelect.style.padding = '6px';
+              skinSelect.style.borderRadius = '6px';
+              skinSelect.style.backgroundColor = '#323946';
+              skinSelect.style.border = '1px solid #4a5568';
+              skinSelect.style.color = '#ffffff';
+              skinSelect.style.outline = 'none';
+              skinSelect.style.cursor = 'pointer';
+
+              controlsDiv.appendChild(animSelect);
+              controlsDiv.appendChild(skinSelect);
+              spineContainer.appendChild(controlsDiv);
+
+              setTimeout(() => {
+                const skeletonComponent = spine.getSkeleton(containerId);
+                if (!skeletonComponent) {
+                  console.error('Spine skeleton not found for id:', containerId);
+                  return;
                 }
-              }).catch(err => {
-                console.error('Failed to initialize Spine skeleton:', err);
-              });
-            }, 100);
-          });
+                skeletonComponent.whenReady.then((skelInfo) => {
+                  let skeleton = skelInfo.skeleton;
+                  
+                  let showAnimSelect = false;
+                  let showSkinSelect = false;
+
+                  // Populate Animations
+                  let animations = skeleton.data.animations;
+                  if (animations.length > 1) {
+                      showAnimSelect = true;
+                      animations.forEach(anim => {
+                        let opt = document.createElement('option');
+                        opt.value = anim.name;
+                        opt.textContent = anim.name;
+                        if (anim.name === post.spineData.animation) {
+                          opt.selected = true;
+                        }
+                        animSelect.appendChild(opt);
+                      });
+                      animSelect.addEventListener('change', (e) => {
+                        wc.setAttribute('animation', e.target.value);
+                      });
+                  } else {
+                      animSelect.style.display = 'none';
+                  }
+
+                  // Populate Skins
+                  let skins = skeleton.data.skins;
+                  if (skins.length > 1) { // more than default skin
+                      showSkinSelect = true;
+                      skins.forEach(skin => {
+                        let opt = document.createElement('option');
+                        opt.value = skin.name;
+                        opt.textContent = skin.name;
+                        skinSelect.appendChild(opt);
+                      });
+                      skinSelect.addEventListener('change', (e) => {
+                        wc.setAttribute('skin', e.target.value);
+                      });
+                  } else {
+                      skinSelect.style.display = 'none';
+                  }
+
+                  // Hide the whole container if there are no dropdowns needed
+                  if (!showAnimSelect && !showSkinSelect) {
+                      controlsDiv.style.display = 'none';
+                  }
+                }).catch(err => {
+                  console.error('Failed to initialize Spine skeleton:', err);
+                });
+              }, 100);
+            });
+          }
         }
         anchor.appendChild(workInfo);
         postDiv.appendChild(anchor);
@@ -512,8 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
     previousScreenSize = innerWidth;
   });
 
-  // Load Spine resources and then render the grid
-  loadSpineWebComponentsResources(() => {
+  function renderCurrentGrid() {
     if (previousScreenSize < 600) {
       generateMasonryGrid(1, posts);
     } else if (previousScreenSize >= 600 && previousScreenSize < 1000) {
@@ -521,5 +552,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       generateMasonryGrid(3, posts);
     }
-  });
+  }
+
+  // Load Spine resources and then render the grid
+  if (isWebGLSupported()) {
+    loadSpineWebComponentsResources(() => {
+      renderCurrentGrid();
+    });
+  } else {
+    renderCurrentGrid();
+  }
 });

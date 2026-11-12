@@ -144,6 +144,8 @@ function copyTextAndShowPopup(copyButtonId, copyPopupId, preClassName) {
   const preTag = document.querySelector(`.${preClassName}`);
   const copyPopup = document.getElementById(copyPopupId);
 
+  if (!copyButton || !preTag || !copyPopup) return;
+
   copyButton.addEventListener('click', () => {
     const tempTextArea = document.createElement('textarea');
     tempTextArea.value = preTag.textContent;
@@ -174,19 +176,21 @@ copyTextAndShowPopup('copyButton2', 'copyPopup2', 'prompt2');
 const iconContainer = document.querySelector('.icon-container');
 const popoverContent = document.querySelector('.popover-content');
 
-iconContainer.addEventListener('click', (e) => {
-  e.stopPropagation(); // Prevent clicks inside the icon container from closing the popover
-  const iconRect = iconContainer.getBoundingClientRect();
-  popoverContent.style.top = iconRect.bottom + 'px'; // Position below the icon
-  popoverContent.style.left = iconRect.left + 'px'; // Align with the left edge of the icon
-  popoverContent.style.display = popoverContent.style.display === 'block' ? 'none' : 'block';
-});
+if (iconContainer && popoverContent) {
+  iconContainer.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent clicks inside the icon container from closing the popover
+    const iconRect = iconContainer.getBoundingClientRect();
+    popoverContent.style.top = iconRect.bottom + 'px'; // Position below the icon
+    popoverContent.style.left = iconRect.left + 'px'; // Align with the left edge of the icon
+    popoverContent.style.display = popoverContent.style.display === 'block' ? 'none' : 'block';
+  });
 
-document.addEventListener('click', (e) => {
-  if (!iconContainer.contains(e.target) && e.target !== popoverContent) {
-    popoverContent.style.display = 'none';
-  }
-});
+  document.addEventListener('click', (e) => {
+    if (!iconContainer.contains(e.target) && e.target !== popoverContent) {
+      popoverContent.style.display = 'none';
+    }
+  });
+}
 
 
 
