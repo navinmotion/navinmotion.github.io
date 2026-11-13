@@ -101,6 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     {
+      title: 'Speedster',
+      link: '',
+      type: 'spine-component',
+      spineData: {
+        width: '100%',
+        height: '500px',
+        skeleton: 'assets/spine/Speedster.json',
+        atlas: 'assets/spine/Speedster.atlas',
+        animation: 'run',
+        backgroundColor: '#1f242d'
+      }
+    },
+    {
       title: 'Egypt Queen',
       link: '',
       type: 'spine-component',
@@ -111,9 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         atlas: 'assets/spine/Egypt-Queen.atlas',
         animation: 'idle-nodding',
         backgroundColor: '#1f242d',
-        // video: [
-        //   'assets/video/Egypt-Queen.webm',
-        // ]
       }
     },
     {
@@ -126,19 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skeleton: 'assets/spine/magic-crystal-stone.json',
         atlas: 'assets/spine/magic-crystal-stone.atlas',
         animation: 'animation',
-        backgroundColor: '#1f242d'
-      }
-    },
-    {
-      title: 'Chibi Boy',
-      link: '',
-      type: 'spine-component',
-      spineData: {
-        width: '100%',
-        height: '500px',
-        skeleton: 'assets/spine/Chibi-Boy.json',
-        atlas: 'assets/spine/Chibi-Boy.atlas',
-        animation: 'walking',
         backgroundColor: '#1f242d'
       }
     },
@@ -413,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
               wc.setAttribute('atlas', post.spineData.atlas);
               wc.setAttribute('skeleton', post.spineData.skeleton);
               if (post.spineData.animation) {
-                  wc.setAttribute('animation', post.spineData.animation);
+                wc.setAttribute('animation', post.spineData.animation);
               }
               wc.setAttribute('fit', 'contain');
               wc.setAttribute('auto-calculate-bounds', '');
@@ -421,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
               wc.style.height = post.spineData.height;
               wc.style.display = 'block';
               wc.style.backgroundColor = 'transparent';
-              
+
               spineContainer.appendChild(wc);
 
               // Add UI for Dropdowns
@@ -466,50 +463,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 skeletonComponent.whenReady.then((skelInfo) => {
                   let skeleton = skelInfo.skeleton;
-                  
+
                   let showAnimSelect = false;
                   let showSkinSelect = false;
 
                   // Populate Animations
                   let animations = skeleton.data.animations;
                   if (animations.length > 1) {
-                      showAnimSelect = true;
-                      animations.forEach(anim => {
-                        let opt = document.createElement('option');
-                        opt.value = anim.name;
-                        opt.textContent = anim.name;
-                        if (anim.name === post.spineData.animation) {
-                          opt.selected = true;
-                        }
-                        animSelect.appendChild(opt);
-                      });
-                      animSelect.addEventListener('change', (e) => {
-                        wc.setAttribute('animation', e.target.value);
-                      });
+                    showAnimSelect = true;
+                    animations.forEach(anim => {
+                      let opt = document.createElement('option');
+                      opt.value = anim.name;
+                      opt.textContent = anim.name;
+                      if (anim.name === post.spineData.animation) {
+                        opt.selected = true;
+                      }
+                      animSelect.appendChild(opt);
+                    });
+                    animSelect.addEventListener('change', (e) => {
+                      wc.setAttribute('animation', e.target.value);
+                    });
                   } else {
-                      animSelect.style.display = 'none';
+                    animSelect.style.display = 'none';
                   }
 
                   // Populate Skins
                   let skins = skeleton.data.skins;
                   if (skins.length > 1) { // more than default skin
-                      showSkinSelect = true;
-                      skins.forEach(skin => {
-                        let opt = document.createElement('option');
-                        opt.value = skin.name;
-                        opt.textContent = skin.name;
-                        skinSelect.appendChild(opt);
-                      });
-                      skinSelect.addEventListener('change', (e) => {
-                        wc.setAttribute('skin', e.target.value);
-                      });
+                    showSkinSelect = true;
+                    skins.forEach(skin => {
+                      let opt = document.createElement('option');
+                      opt.value = skin.name;
+                      opt.textContent = skin.name;
+                      skinSelect.appendChild(opt);
+                    });
+                    skinSelect.addEventListener('change', (e) => {
+                      wc.setAttribute('skin', e.target.value);
+                    });
                   } else {
-                      skinSelect.style.display = 'none';
+                    skinSelect.style.display = 'none';
                   }
 
                   // Hide the whole container if there are no dropdowns needed
                   if (!showAnimSelect && !showSkinSelect) {
-                      controlsDiv.style.display = 'none';
+                    controlsDiv.style.display = 'none';
                   }
                 }).catch(err => {
                   console.error('Failed to initialize Spine skeleton:', err);

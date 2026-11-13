@@ -1,0 +1,265 @@
+Speedster.png
+size: 347,269
+format: RGBA8888
+filter: Linear,Linear
+pma:true
+repeat: none
+Base_hair
+  rotate: false
+  xy: 310, 229
+  size: 34, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1
+Eye_Closed
+  rotate: true
+  xy: 59, 87
+  size: 101, 61
+  orig: 120, 80
+  offset: 10, 9
+  index: -1
+Eye_white
+  rotate: false
+  xy: 227, 161
+  size: 7, 5
+  orig: 7, 5
+  offset: 0, 0
+  index: -1
+Eyebrow
+  rotate: true
+  xy: 246, 90
+  size: 13, 6
+  orig: 14, 6
+  offset: 1, 0
+  index: -1
+Eyeshadow
+  rotate: true
+  xy: 309, 93
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 227, 168
+  size: 53, 58
+  orig: 53, 59
+  offset: 0, 1
+  index: -1
+Hair4
+  rotate: false
+  xy: 255, 87
+  size: 52, 79
+  orig: 52, 79
+  offset: 0, 0
+  index: -1
+Hair_1
+  rotate: false
+  xy: 105, 6
+  size: 49, 25
+  orig: 49, 25
+  offset: 0, 0
+  index: -1
+Hair_2
+  rotate: true
+  xy: 287, 168
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+Hair_3
+  rotate: false
+  xy: 105, 53
+  size: 15, 32
+  orig: 15, 33
+  offset: 0, 0
+  index: -1
+Hair_5
+  rotate: true
+  xy: 200, 5
+  size: 29, 40
+  orig: 30, 40
+  offset: 1, 0
+  index: -1
+Hair_6
+  rotate: false
+  xy: 309, 106
+  size: 30, 60
+  orig: 30, 60
+  offset: 0, 0
+  index: -1
+Left_Feet
+  rotate: false
+  xy: 246, 13
+  size: 54, 29
+  orig: 136, 116
+  offset: 0, 0
+  index: -1
+Left_arm_lower
+  rotate: false
+  xy: 157, 31
+  size: 41, 72
+  orig: 42, 73
+  offset: 1, 0
+  index: -1
+Left_arm_upper
+  rotate: true
+  xy: 227, 223
+  size: 44, 81
+  orig: 44, 86
+  offset: 0, 5
+  index: -1
+Left_leg_lower
+  rotate: false
+  xy: 122, 46
+  size: 33, 102
+  orig: 33, 106
+  offset: 0, 0
+  index: -1
+Right_leg_lower
+  rotate: false
+  xy: 122, 46
+  size: 33, 102
+  orig: 33, 106
+  offset: 0, 0
+  index: -1
+Left_leg_upper
+  rotate: false
+  xy: 163, 161
+  size: 62, 106
+  orig: 63, 107
+  offset: 1, 0
+  index: -1
+Right_leg_upper
+  rotate: false
+  xy: 163, 161
+  size: 62, 106
+  orig: 63, 107
+  offset: 1, 0
+  index: -1
+Left_palm
+  rotate: true
+  xy: 156, 2
+  size: 27, 38
+  orig: 28, 38
+  offset: 1, 0
+  index: -1
+Leftt_shoe
+  rotate: true
+  xy: 200, 36
+  size: 67, 44
+  orig: 67, 44
+  offset: 0, 0
+  index: -1
+Right_shoe
+  rotate: true
+  xy: 200, 36
+  size: 67, 44
+  orig: 67, 44
+  offset: 0, 0
+  index: -1
+Lips
+  rotate: false
+  xy: 316, 182
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+Neck
+  rotate: false
+  xy: 122, 150
+  size: 38, 38
+  orig: 38, 39
+  offset: 0, 0
+  index: -1
+Right_arm_Bracelet
+  rotate: true
+  xy: 105, 33
+  size: 18, 12
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+Right_arm_lower
+  rotate: true
+  xy: 246, 44
+  size: 41, 72
+  orig: 43, 74
+  offset: 1, 1
+  index: -1
+Right_arm_upper
+  rotate: false
+  xy: 59, 2
+  size: 44, 83
+  orig: 44, 86
+  offset: 0, 3
+  index: -1
+Right_feet
+  rotate: false
+  xy: 287, 192
+  size: 55, 29
+  orig: 136, 116
+  offset: 0, 0
+  index: -1
+Right_palm
+  rotate: true
+  xy: 302, 15
+  size: 27, 37
+  orig: 28, 38
+  offset: 1, 0
+  index: -1
+Right_wristband
+  rotate: true
+  xy: 320, 78
+  size: 26, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+Torso
+  rotate: true
+  xy: 2, 190
+  size: 77, 159
+  orig: 77, 159
+  offset: 0, 0
+  index: -1
+ear
+  rotate: true
+  xy: 137, 35
+  size: 9, 17
+  orig: 10, 18
+  offset: 1, 1
+  index: -1
+kada
+  rotate: false
+  xy: 119, 33
+  size: 16, 11
+  orig: 17, 12
+  offset: 0, 0
+  index: -1
+locket_1
+  rotate: false
+  xy: 2, 3
+  size: 53, 65
+  orig: 53, 65
+  offset: 0, 0
+  index: -1
+locket_2
+  rotate: true
+  xy: 162, 105
+  size: 54, 91
+  orig: 54, 92
+  offset: 0, 0
+  index: -1
+locket_3
+  rotate: false
+  xy: 2, 70
+  size: 55, 118
+  orig: 55, 118
+  offset: 0, 0
+  index: -1
+pupil
+  rotate: true
+  xy: 236, 163
+  size: 3, 4
+  orig: 3, 4
+  offset: 0, 0
+  index: -1
